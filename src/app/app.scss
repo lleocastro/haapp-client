@@ -14,3 +14,41 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+/** Header */
+.header-user-profile {
+  width: 25px !important;
+  height: 23px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.header-user-profile > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.header-icon-config {
+  vertical-align: -webkit-baseline-middle;
+  font-size: 1.5em !important;
+}
+
+/** Ionic Components */
+.ion-md-flame { color: red !important; }
+
+/** Colors */
+.green { color: green; }
+.yellow { color: yellow; }
+.purple { color: purple; }
+
+/** Helpers */
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.object-cover { object-fit: cover !important; }
+.inline { display: inline-block !important; }
+.block { display: block !important; }
+.relative { position: relative !important; }
+.absolute { position: absolute !important; }
+.super { vertical-align: super !important; }
+.fix-float { clear: both !important; }
+.middle { vertical-align: middle !important; }

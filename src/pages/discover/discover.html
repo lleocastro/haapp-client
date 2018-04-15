@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Descubra</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-segment [(ngModel)]="relationship" color="primary" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="feed">Feed</ion-segment-button>
+    <ion-segment-button value="users">Usuários</ion-segment-button>
+  </ion-segment>
+
+</ion-content>

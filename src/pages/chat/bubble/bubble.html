@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="text-left" col-10>
+          <ion-avatar class="header-user-profile inline super" item-start>
+            <img [src]="chatData?.avatar_url">
+          </ion-avatar>
+          <ion-title class="inline">
+            {{ chatData?.name }}
+            <small class="chat-bubble-header-username">@{{ chatData?.username }}</small>
+          </ion-title>
+        </ion-col>
+        <ion-col class="text-right" col-2>
+          <ion-icon name="md-more" class="header-icon-config"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+        <small class="chat-bubble-header-data" [hidden]="chatData?.current_status">visualizado às {{ chatData?.last_view | date:'hh:mm' }}</small>
+        <small class="chat-bubble-header-data" [hidden]="!chatData?.current_status">visualizando agora</small>
+
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="chat-bubble-background" padding>
+
+  <div *ngFor="let message of chatData.messages; let i = index">
+
+    <p class="chat-bubble-bubble otheruser inline" [ngClass]="{'myself': message?.user_id == currentUser?.user_id,
+                                                               'otheruser': message?.user_id !== currentUser?.user_id}">
+      {{ message?.text }}&nbsp;&nbsp;<span>{{ message?.created_at | date:'hh:mm' }}</span>
+    </p>
+
+    &nbsp;
+    <span [hidden]="message?.user_id == currentUser?.user_id" (tap)="likeToggle(message)">
+      <ion-icon class="chat-bubble-bubble-like purple" name="ios-heart" [hidden]="!message?.liked"></ion-icon>
+      <ion-icon class="chat-bubble-bubble-like purple" name="ios-heart-outline" [hidden]="message?.liked"></ion-icon>
+    </span>
+
+    <div [hidden]="!(message?.user_id !== currentUser?.user_id && i == (chatData?.messages_count - 1) && message?.read)">
+      <small class="chat-bubble-bubble-visualized block">
+        <ion-icon class="middle" name="ios-eye-outline"></ion-icon>&nbsp;visto
+      </small>
+    </div>
+
+    <div class="fix-float"></div>
+  </div>
+
+  <footer class="chat-bubble-bubble-footer">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>
+          <ion-textarea class="textarea" placeholder="Diga algo..."></ion-textarea>
+        </ion-col>
+        <ion-col col-2>
+          <button class="send-message" ion-button icon-only>
+            <ion-icon name="md-send"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </footer>
+</ion-content>
