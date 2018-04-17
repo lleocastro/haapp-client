@@ -1,23 +1,22 @@
 <ion-header>
   <ion-navbar>
     <ion-grid>
-      <ion-row>
+      <ion-row class="ptop-10">
         <ion-col class="text-left" col-10>
-          <ion-avatar class="header-user-profile inline super" item-start>
+          <ion-avatar class="header-user-profile inline middle" item-start>
             <img [src]="chatData?.avatar_url">
           </ion-avatar>
-          <ion-title class="inline">
+          <ion-title class="inline middle">
             {{ chatData?.name }}
-            <small class="chat-bubble-header-username">@{{ chatData?.username }}</small>
+            <small class="chat-bubble-header-username blank">@{{ chatData?.username }}</small>
           </ion-title>
         </ion-col>
         <ion-col class="text-right" col-2>
-          <ion-icon name="md-more" class="header-icon-config"></ion-icon>
+          <ion-icon name="md-more" class="header-icon-config blank"></ion-icon>
         </ion-col>
       </ion-row>
 
-        <small class="chat-bubble-header-data" [hidden]="chatData?.current_status">visualizado às {{ chatData?.last_view | date:'hh:mm' }}</small>
-        <small class="chat-bubble-header-data" [hidden]="!chatData?.current_status">visualizando agora</small>
+        <small class="chat-bubble-header-data blank">visualizado às {{ chatData?.last_view | date:'hh:mm' }}</small>
 
     </ion-grid>
   </ion-navbar>
@@ -34,8 +33,8 @@
 
     &nbsp;
     <span [hidden]="message?.user_id == currentUser?.user_id" (tap)="likeToggle(message)">
-      <ion-icon class="chat-bubble-bubble-like purple" name="ios-heart" [hidden]="!message?.liked"></ion-icon>
-      <ion-icon class="chat-bubble-bubble-like purple" name="ios-heart-outline" [hidden]="message?.liked"></ion-icon>
+      <ion-icon class="chat-bubble-bubble-like red" name="ios-heart" [hidden]="!message?.liked"></ion-icon>
+      <ion-icon class="chat-bubble-bubble-like" name="ios-heart-outline" [hidden]="message?.liked"></ion-icon>
     </span>
 
     <div [hidden]="!(message?.user_id !== currentUser?.user_id && i == (chatData?.messages_count - 1) && message?.read)">
@@ -54,7 +53,7 @@
           <ion-textarea class="textarea" placeholder="Diga algo..."></ion-textarea>
         </ion-col>
         <ion-col col-2>
-          <button class="send-message" ion-button icon-only>
+          <button class="send-message btn-primary" ion-button icon-only>
             <ion-icon name="md-send"></ion-icon>
           </button>
         </ion-col>

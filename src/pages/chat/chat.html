@@ -1,17 +1,25 @@
 <ion-header>
   <ion-navbar>
     <ion-grid>
+      <ion-row>
+        <ion-col class="text-left" col-10>
+          <h5 class="fweight blank mtop-0">Haapp</h5>
+        </ion-col>
+        <ion-col class="text-right" col-2>
+          <ion-icon name="ios-search" class="header-icon-config blank"></ion-icon>
+        </ion-col>
+      </ion-row>
         <ion-row>
           <ion-col class="text-left" col-2>
             <ion-avatar class="header-user-profile" item-start>
-              <img [src]="currentUser.avatar_url">
+              <img class="object-cover" [src]="currentUser.avatar_url">
             </ion-avatar>
           </ion-col>
           <ion-col class="text-center" col-8>
             <ion-title>Conversas</ion-title>
           </ion-col>
           <ion-col class="text-right" col-2>
-            <ion-icon name="ios-settings-outline" class="header-icon-config"></ion-icon>
+            <ion-icon name="ios-settings-outline" class="header-icon-config fsize-1dot6 middle blank"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -42,15 +50,19 @@
       </div>
 
       <p class="user-message-preview">
-        <ion-icon name="ios-redo-outline" [hidden]="!chat?.messages[chat?.messages_count - 1].user_id == currentUser.user_id"
-                                          [ngClass]="{'green': chat?.messages[chat?.messages_count - 1].read}"></ion-icon>
+        <ion-icon name="ios-redo-outline" [hidden]="(!chat?.messages[chat?.messages_count - 1].user_id == currentUser.user_id)"
+                                          *ngIf="!chat?.messages[chat?.messages_count - 1].read"></ion-icon>
+
+        <ion-icon name="ios-redo" class="green" [hidden]="(!chat?.messages[chat?.messages_count - 1].user_id == currentUser.user_id)"
+                                                *ngIf="chat?.messages[chat?.messages_count - 1].read"></ion-icon>
+
         {{ chat?.messages[chat?.messages_count - 1].text }}
       </p>
     </ion-item>
   </ion-list>
 
   <ion-fab right bottom>
-    <button ion-fab mini color="primary" (tap)="initNewConversation($event)">
+    <button ion-fab mini class="btn-primary" (tap)="initNewConversation($event)">
       <ion-icon name="ios-add-outline"></ion-icon>
     </button>
   </ion-fab>

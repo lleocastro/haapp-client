@@ -1,25 +1,26 @@
-
-/**
- * Chat List
- */
 .user-name-preview {
   font-size: 1em !important;
 }
+
 .user-message-preview {
   font-size: .8em !important;
 }
+
 .user-status-preview {
   display: block;
   text-shadow: 1px 1px 10px;
 }
+
 .user-status-preview.online {
-  color: green;
+  color: $color__message_checked;
 }
+
 .user-status-preview.offline {
-  color: #ccc;
+  color: $color__light_gray;
 }
+
 .user-notify-counter {
-  background-color: orange;
+  background-color: $color__gray;
   border-radius: 100%;
   padding: 2px 6px;
   font-size: .6em;
