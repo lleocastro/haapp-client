@@ -26,9 +26,10 @@
 
   <div *ngFor="let message of chatData.messages; let i = index">
 
-    <p class="chat-bubble-bubble otheruser inline" [ngClass]="{'myself': message?.user_id == currentUser?.user_id,
-                                                               'otheruser': message?.user_id !== currentUser?.user_id}">
+    <p class="chat-bubble-bubble inline" [ngClass]="{'myself': message?.user_id == currentUser?.user_id,
+                                                               'otheruser': message?.user_id !== currentUser?.user_id}" (press)="messageTapped($event, message)">
       {{ message?.text }}&nbsp;&nbsp;<span>{{ message?.created_at | date:'hh:mm' }}</span>
+      &nbsp;&nbsp;<ion-icon name="md-checkmark-circle" class="light-gray middle" [hidden]="!message?.selected"></ion-icon>
     </p>
 
     &nbsp;
@@ -61,3 +62,10 @@
     </ion-grid>
   </footer>
 </ion-content>
+
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer> -->

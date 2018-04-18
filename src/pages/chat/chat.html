@@ -19,7 +19,7 @@
             <ion-title>Conversas</ion-title>
           </ion-col>
           <ion-col class="text-right" col-2>
-            <ion-icon name="ios-settings-outline" class="header-icon-config fsize-1dot6 middle blank"></ion-icon>
+            <ion-icon name="ios-settings-outline" class="header-icon-config fsize-1dot6 base-middle blank"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -46,7 +46,7 @@
         <small class="user-status-preview" [ngClass]="{'online': chat?.current_status, 'offline': !chat?.current_status}">
           {{ (chat?.current_status) ? 'online' : 'offline'}}
         </small>
-        <ion-icon name="star" class="yellow" [hidden]="!chat?.is_favority"></ion-icon>
+        <ion-icon name="ios-star-outline" class="yellow block" [hidden]="!chat?.is_favority"></ion-icon>
       </div>
 
       <p class="user-message-preview">

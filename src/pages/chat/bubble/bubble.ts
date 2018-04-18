@@ -60,6 +60,11 @@ export class BubblePage implements OnInit, OnChanges, OnDestroy  {
     }
   }
 
+  messageTapped(e, message) {
+    message.selected = true;
+    console.log(e, message);
+  }
+
   /**
    * UUID Generator
    */

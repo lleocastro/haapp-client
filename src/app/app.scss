@@ -18,12 +18,14 @@
 /**
  * Default Colors
  */
- $color__primary: teal;
+$color__primary: rgb(0, 128, 128);
 $color__message_checked: #82BD4C;
 $color__favority_chat: #FFE426;
 $color__message_liked: #E33F3D;
+$color__turquoise: rgb(64, 224, 208);
 $color__light_gray: #ccc;
 $color__gray: #666;
+$color__dark_gray: rgb(169, 169, 169);
 
 /** Colors to dinamyc conditionals */
 .blank { color: #fff !important;; }
@@ -59,27 +61,17 @@ $color__gray: #666;
 .super { vertical-align: super !important; }
 .fix-float { clear: both !important; }
 .middle { vertical-align: middle !important; }
+.base-middle { vertical-align: -webkit-baseline-middle !important; }
 
+/*****************************************
+ *       Ionic Custom Components
+ *****************************************
+ */
 
-/** Ionic Custom Components */
-.header.header-md {
+ /** Header */
+ .header.header-md {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, .5) !important;
 }
-.toolbar-background-md {
-  background: $color__primary !important;
-}
-.toolbar-title.toolbar-title-md {
-  color: #fff !important;
-  font-weight: 100 !important;
-}
-.toolbar-title-md {
-  font-size: 1.7rem !important;
-}
-.back-button {
-  color: #fff !important;
-}
-
-/** Header */
 .header-user-profile {
   width: 29px !important;
   height: 28px;
@@ -94,4 +86,30 @@ $color__gray: #666;
 .header-icon-config {
   vertical-align: -webkit-baseline-middle;
   font-size: 1.5em !important;
+}
+
+.toolbar-background-md {
+  background: $color__primary !important;
+}
+.toolbar-title.toolbar-title-md {
+  color: #fff !important;
+  font-weight: normal !important;
+}
+.back-button {
+  color: #fff !important;
+}
+
+.tabbar.show-tabbar {
+  height: 47px !important;
+  background: none !important;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, .1) !important;
+}
+.tab-button-text {
+  font-size: .7em !important;
+  font-weight: normal !important;
+  margin-top: 0 !important;
+}
+.tabs-md .tab-button[aria-selected=true],
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+  color: $color__primary !important;
 }

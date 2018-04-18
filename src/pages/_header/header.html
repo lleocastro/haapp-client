@@ -16,7 +16,7 @@
             </ion-avatar>
           </ion-col>
           <ion-col class="text-center" col-8>
-            <ion-title>Descubra</ion-title>
+            <ion-title>{{ title || 'Haapp' }}</ion-title>
           </ion-col>
           <ion-col class="text-right" col-2>
             <ion-icon name="ios-settings-outline" class="header-icon-config fsize-1dot6 base-middle blank"></ion-icon>
@@ -25,12 +25,3 @@
       </ion-grid>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-
-  <ion-segment [(ngModel)]="relationship" color="primary" (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="feed">Feed</ion-segment-button>
-    <ion-segment-button value="users">Usuários</ion-segment-button>
-  </ion-segment>
-
-</ion-content>

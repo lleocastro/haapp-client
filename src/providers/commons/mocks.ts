@@ -92,7 +92,7 @@ export class Mocks {
         minibio: '',
         tags: [],
         publications_counter: 0,
-        current_status: true
+        current_status: false
       },
       {
         user_id: 5,
@@ -121,14 +121,14 @@ export class Mocks {
         chat_id: 1,
         chat_uuid: '99603135-bbe9-2ce6-684b-36c9af7827a9',
         last_view: new Date(),
-        is_favority: true,
+        is_favority: false,
         messages: [
           {
             id: 1,
             user_id: 0,
             text: 'Olá chew! como se tá? ^^',
             liked: false,
-            read: true,
+            read: false,
             created_at: new Date()
           },
           {
@@ -136,7 +136,7 @@ export class Mocks {
             user_id: 3,
             text: 'Ahhhhhhhhhh eu to bem, porq?',
             liked: false,
-            read: true,
+            read: false,
             created_at: new Date()
           },
           {
@@ -144,7 +144,7 @@ export class Mocks {
             user_id: 0,
             text: 'Ok então. :0',
             liked: false,
-            read: true,
+            read: false,
             created_at: new Date()
           },
           {
@@ -152,7 +152,7 @@ export class Mocks {
             user_id: 0,
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing eli. Sit amet consectetur... adipisicing, dolor, dolor, dolor',
             liked: false,
-            read: true,
+            read: false,
             created_at: new Date()
           },
           {
@@ -160,7 +160,7 @@ export class Mocks {
             user_id: 1,
             text: 'adipisicing, dolor, dolor, dolor',
             liked: true,
-            read: true,
+            read: false,
             created_at: new Date()
           }
         ]
