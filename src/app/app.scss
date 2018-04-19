@@ -35,19 +35,22 @@ $color__dark_gray: rgb(169, 169, 169);
 .red { color: $color__message_liked !important; }
 
 /** Fonts */
+.fsize-1 { font-size: 1em !important; }
 .fsize-1dot6 { font-size: 1.6em !important; }
 .fsize-2 { font-size: 2em !important; }
+/** Font Styles */
 .fweight { font-weight: normal !important; }
 .fweight-100 { font-weight: 100 !important; }
 
 /** Margins */
 .mtop-0 { margin-top: 0 !important; }
+.mtop-3 { margin-top: 3px !important; }
 
 /** Padding */
 .ptop-10 { padding-top: 10px !important; }
 
 /** Backgrounds */
-.btn-primary { background-color: $color__primary !important; }
+.btn-primary { background-color: rgb(112, 128, 144) !important; }
 
 /** Helpers */
 .text-center { text-align: center !important; }
@@ -97,19 +100,4 @@ $color__dark_gray: rgb(169, 169, 169);
 }
 .back-button {
   color: #fff !important;
-}
-
-.tabbar.show-tabbar {
-  height: 47px !important;
-  background: none !important;
-  box-shadow: 0 -5px 15px rgba(0, 0, 0, .1) !important;
-}
-.tab-button-text {
-  font-size: .7em !important;
-  font-weight: normal !important;
-  margin-top: 0 !important;
-}
-.tabs-md .tab-button[aria-selected=true],
-.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
-  color: $color__primary !important;
 }

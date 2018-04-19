@@ -1,36 +1,45 @@
-.user-name-preview {
-  font-size: 1em !important;
-}
+.chat__container {
 
-.user-message-preview {
-  font-size: .8em !important;
-}
+  .user-name-preview {
+    font-size: 1em !important;
+  }
 
-.user-status-preview {
-  display: block;
-  text-shadow: 1px 1px 10px;
-}
+  .user-message-preview {
+    font-size: .8em !important;
+  }
 
-.user-status-preview.online {
-  color: $color__message_checked;
-}
+  .user-status-preview {
+    display: block;
+    text-shadow: 1px 1px 10px;
+  }
 
-.user-status-preview.offline {
-  color: $color__light_gray;
-}
+  .user-status-preview.online {
+    color: $color__message_checked;
+  }
 
-.user-notify-counter {
-  background-color: $color__primary;
-  border-radius: 100%;
-  padding: 2px 6px;
-  font-size: .6em;
-  color: #fff;
-  vertical-align: middle;
-}
+  .user-status-preview.offline {
+    color: $color__light_gray;
+  }
 
-.chat-selected {
-  top: -1px;
-  right: 2px;
-  color: $color__light_gray;
-  font-size: 2.8em;
+  .user-notify-counter {
+    background-color: $color__gray;
+    border-radius: 100%;
+    padding: 2px 6px;
+    font-size: .6em;
+    color: #fff;
+    vertical-align: middle;
+  }
+
+  .last-message-date {
+    font-size: .6em;
+    color: $color__gray;
+  }
+
+  .chat-selected {
+    top: -1px;
+    right: 2px;
+    color: $color__light_gray;
+    font-size: 2.8em;
+  }
+
 }

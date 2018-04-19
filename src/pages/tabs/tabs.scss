@@ -1,0 +1,20 @@
+.tabbar.show-tabbar {
+  height: 47px !important;
+  background: none !important;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, .1) !important;
+}
+.tab-button-text {
+  font-size: .7em !important;
+  font-weight: normal !important;
+  margin-top: 0 !important;
+}
+.tabs-md .tab-button[aria-selected=true],
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+  color: $color__gray !important;
+}
+.tabs-md .tab-button[aria-selected=false] {
+  color: #ccc !important;
+}
+.tabs-md .tab-button[aria-selected=false] .tab-button-text {
+  display: none !important;
+}

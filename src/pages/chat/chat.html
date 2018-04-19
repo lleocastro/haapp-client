@@ -26,8 +26,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="chat__container">
   <ion-list>
     <ion-item *ngFor="let chat of chatPreviewList" (tap)="openChatConversation($event, chat);"
                                                    (press)="openChatOptions($event, chat)">
@@ -37,26 +36,20 @@
       </ion-avatar>
 
       <h2 class="user-name-preview">
-        {{ chat?.name }}
+        <ion-icon name="ios-star" class="yellow fsize-1" [hidden]="!chat?.is_favority"></ion-icon>&nbsp;{{ chat?.name }}
         <small style="font-size:0.6em;color:#666;">@{{ chat?.username }}</small>
       </h2>
 
       <div class="text-center" item-right>
         <span class="user-notify-counter" [hidden]="chat?.unread_counter < 1">{{ chat?.unread_counter }}</span>
-        <small class="user-status-preview" [ngClass]="{'online': chat?.current_status, 'offline': !chat?.current_status}">
-          {{ (chat?.current_status) ? 'online' : 'offline'}}
-        </small>
-        <ion-icon name="ios-star-outline" class="yellow block" [hidden]="!chat?.is_favority"></ion-icon>
+        <small class="last-message-date" [hidden]="chat?.unread_counter > 0">{{ chat?.last_view | date:'dd/MM/yyyy' }}</small>
       </div>
 
       <p class="user-message-preview">
-        <ion-icon name="ios-redo-outline" [hidden]="(!chat?.messages[chat?.messages_count - 1].user_id == currentUser.user_id)"
-                                          *ngIf="!chat?.messages[chat?.messages_count - 1].read"></ion-icon>
-
-        <ion-icon name="ios-redo" class="green" [hidden]="(!chat?.messages[chat?.messages_count - 1].user_id == currentUser.user_id)"
-                                                *ngIf="chat?.messages[chat?.messages_count - 1].read"></ion-icon>
-
-        {{ chat?.messages[chat?.messages_count - 1].text }}
+        <ion-icon class="middle" name="ios-eye-outline" [hidden]="(!chat?.messages[chat?.messages_count - 1].user_id == currentUser.user_id)"
+                                                        *ngIf="chat?.messages[chat?.messages_count - 1].read"></ion-icon>
+        <ion-icon name="ios-redo-outline" [hidden]="(!chat?.messages[chat?.messages_count - 1].user_id == currentUser.user_id)"></ion-icon>
+        &nbsp;{{ chat?.messages[chat?.messages_count - 1].text }}
       </p>
     </ion-item>
   </ion-list>
@@ -66,5 +59,4 @@
       <ion-icon name="ios-add-outline"></ion-icon>
     </button>
   </ion-fab>
-
 </ion-content>

@@ -1,5 +1,58 @@
-.chat-bubble-background {
+.bubble__container {
   background-image: url('../../../assets/imgs/chat-background-1.png');
+
+  .chat-bubble-bubble,
+  .chat-bubble-bubble {
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 90%;
+  }
+  .chat-bubble-bubble > span,
+  .chat-bubble-bubble > span {
+    text-align: right;
+    font-size: .7em;
+    vertical-align: bottom;
+  }
+
+  .chat-bubble-bubble.myself {
+    background-color: beige;
+    float: right;
+    margin: 2px;
+  }
+
+  .chat-bubble-bubble.otheruser {
+    background-color: #fff;
+  }
+
+  .chat-bubble-bubble-like {
+    font-size: 1.7em;
+    vertical-align: middle;
+  }
+
+  .chat-bubble-bubble-visualized {
+    margin-top: -10px;
+    font-size: .7em;
+  }
+
+  .chat-bubble-bubble-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+  }
+
+  .chat-bubble-bubble-footer .textarea {
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    padding: 1px;
+    margin-top: -7px;
+  }
+
+  .send-message {
+    border-radius: 100%;
+    font-size: .8em;
+  }
+
 }
 
 .chat-bubble-header-username {
@@ -12,56 +65,4 @@
   text-align: right;
   font-size: .7em;
   color: $color__gray;
-}
-
-.chat-bubble-bubble,
-.chat-bubble-bubble {
-  padding: 5px;
-  border-radius: 5px;
-  max-width: 90%;
-}
-.chat-bubble-bubble > span,
-.chat-bubble-bubble > span {
-  text-align: right;
-  font-size: .7em;
-  vertical-align: bottom;
-}
-
-.chat-bubble-bubble.myself {
-  background-color: beige;
-  float: right;
-  margin: 2px;
-}
-
-.chat-bubble-bubble.otheruser {
-  background-color: #fff;
-}
-
-.chat-bubble-bubble-like {
-  font-size: 1.7em;
-  vertical-align: middle;
-}
-
-.chat-bubble-bubble-visualized {
-  margin-top: -10px;
-  font-size: .7em;
-}
-
-.chat-bubble-bubble-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  left: 0;
-}
-
-.chat-bubble-bubble-footer .textarea {
-  background-color: rgb(255, 255, 255);
-  border-radius: 7px;
-  padding: 1px;
-  margin-top: -7px;
-}
-
-.send-message {
-  border-radius: 100%;
-  font-size: .8em;
 }
