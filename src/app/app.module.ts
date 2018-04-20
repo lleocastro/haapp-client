@@ -11,6 +11,8 @@ import { PeoplesPage } from '../pages/peoples/peoples';
 import { DiscoverPage } from '../pages/discover/discover';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { ConfigsPage } from '../pages/configs/configs';
+
 import { UserProvider } from '../providers/auth/user';
 import { ChatProvider } from '../providers/chat/chat';
 
@@ -24,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BubblePage,
     PeoplesPage,
     DiscoverPage,
-    TabsPage
+    TabsPage,
+    ConfigsPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BubblePage,
     PeoplesPage,
     DiscoverPage,
-    TabsPage
+    TabsPage,
+    ConfigsPage
   ],
   providers: [
     StatusBar,

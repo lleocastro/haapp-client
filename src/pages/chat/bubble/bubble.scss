@@ -34,25 +34,6 @@
     font-size: .7em;
   }
 
-  .chat-bubble-bubble-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-  }
-
-  .chat-bubble-bubble-footer .textarea {
-    background-color: rgb(255, 255, 255);
-    border-radius: 7px;
-    padding: 1px;
-    margin-top: -7px;
-  }
-
-  .send-message {
-    border-radius: 100%;
-    font-size: .8em;
-  }
-
 }
 
 .chat-bubble-header-username {
@@ -65,4 +46,15 @@
   text-align: right;
   font-size: .7em;
   color: $color__gray;
+}
+
+.footer.footer-md.bubble-footer .toolbar-background-md {
+  background-color: transparent !important;
+}
+.footer.footer-md.bubble-footer .send-message {
+  border-radius: 100%;
+  height: 44px;
+  padding-left: 3px;
+  margin-top: 8px;
+  margin-left: 7px;
 }

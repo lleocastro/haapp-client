@@ -1,8 +1,10 @@
-import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, ActionSheetController } from 'ionic-angular';
 
 import { UserProvider } from '../../providers/auth/user';
 import { ChatProvider } from '../../providers/chat/chat';
+
+import { ConfigsPage } from '../configs/configs';
 
 import { BubblePage } from './bubble/bubble';
 
@@ -10,7 +12,7 @@ import { BubblePage } from './bubble/bubble';
   selector: 'page-chat',
   templateUrl: 'chat.html'
 })
-export class ChatPage implements OnInit, OnChanges, OnDestroy  {
+export class ChatPage implements OnInit {
 
   currentUser: any;
   chatPreviewList: Array<any>;
@@ -26,14 +28,6 @@ export class ChatPage implements OnInit, OnChanges, OnDestroy  {
   ngOnInit() {
     this.chatPreviewList = this.chatProvider.getMyChat();
     this.chatPreviewList.sort((a, b) => b.is_favority);
-  }
-
-  ngOnChanges() {
-    console.info('ngOnChanges');
-  }
-
-  ngOnDestroy() {
-    console.info('ngOnDestroy');
   }
 
   openChatConversation(e, chatData) {
@@ -74,6 +68,14 @@ export class ChatPage implements OnInit, OnChanges, OnDestroy  {
 
   initNewConversation(e) {
     console.log(e);
+  }
+
+  goToSelectedProfile(chat) {
+    console.log(chat);
+  }
+
+  goToConfigs() {
+    this.navCtrl.push(ConfigsPage);
   }
 
 }

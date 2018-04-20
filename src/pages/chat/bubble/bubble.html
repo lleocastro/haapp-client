@@ -8,15 +8,17 @@
           </ion-avatar>
           <ion-title class="inline middle">
             {{ chatData?.name }}
-            <small class="chat-bubble-header-username blank">@{{ chatData?.username }}</small>
+            <small class="chat-bubble-header-username fweight-100 blank">@{{ chatData?.username }}</small>
           </ion-title>
         </ion-col>
         <ion-col class="text-right" col-2>
-          <ion-icon name="md-more" class="header-icon-config blank"></ion-icon>
+          <ion-icon name="md-more" class="header-icon-config blank" (tap)="showBubbleOptions()"></ion-icon>
         </ion-col>
       </ion-row>
 
-        <small class="chat-bubble-header-data blank">visualizado às {{ chatData?.last_view | date:'hh:mm' }}</small>
+      <small class="chat-bubble-header-data fweight-100 blank">
+        visualizado às {{ chatData?.last_view | date:'hh:mm' }}
+      </small>
 
     </ion-grid>
   </ion-navbar>
@@ -47,7 +49,7 @@
     <div class="fix-float"></div>
   </div>
 
-  <footer class="chat-bubble-bubble-footer">
+  <!-- <footer class="chat-bubble-bubble-footer">
     <ion-grid>
       <ion-row>
         <ion-col col-10>
@@ -60,12 +62,22 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </footer>
+  </footer> -->
 </ion-content>
 
-
-<!-- <ion-footer>
+<ion-footer class="bubble-footer">
   <ion-toolbar>
-    <ion-title>Footer</ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-10 class="bg-blank radius-10">
+            <ion-textarea class="bubble-textbox" placeholder="Diga algo..."></ion-textarea>
+          </ion-col>
+          <ion-col col-2>
+            <button ion-button icon-only class="send-message btn-primary">
+              <ion-icon name="md-send"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
   </ion-toolbar>
-</ion-footer> -->
+</ion-footer>

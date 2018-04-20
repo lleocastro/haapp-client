@@ -2,24 +2,25 @@
   <ion-navbar>
     <ion-grid>
       <ion-row>
-        <ion-col class="text-left" col-10>
+        <ion-col class="text-left" col-3>
           <h5 class="fweight blank mtop-0">Haapp</h5>
         </ion-col>
-        <ion-col class="text-right" col-2>
+        <ion-col class="text-right" col-9>
           <ion-icon name="ios-search" class="header-icon-config blank"></ion-icon>
+          <!-- <ion-searchbar></ion-searchbar> -->
         </ion-col>
       </ion-row>
         <ion-row>
           <ion-col class="text-left" col-2>
-            <ion-avatar class="header-user-profile" item-start>
+            <ion-avatar class="header-user-profile" item-start (tap)="goToSelectedProfile(currentUser)">
               <img class="object-cover" [src]="currentUser.avatar_url">
             </ion-avatar>
           </ion-col>
           <ion-col class="text-center" col-8>
-            <ion-title>Conversas</ion-title>
+            <ion-title class="mtop-1">Conversas</ion-title>
           </ion-col>
           <ion-col class="text-right" col-2>
-            <ion-icon name="ios-settings-outline" class="header-icon-config fsize-1dot6 base-middle blank"></ion-icon>
+            <ion-icon name="ios-settings-outline" class="header-icon-config fsize-1dot6 base-middle blank" (tap)="goToConfigs()"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -28,24 +29,23 @@
 
 <ion-content class="chat__container">
   <ion-list>
-    <ion-item *ngFor="let chat of chatPreviewList" (tap)="openChatConversation($event, chat);"
-                                                   (press)="openChatOptions($event, chat)">
-      <ion-avatar class="relative" item-start>
+    <ion-item *ngFor="let chat of chatPreviewList" (press)="openChatOptions($event, chat)">
+      <ion-avatar class="relative" item-start (tap)="goToSelectedProfile(chat)">
         <img class="object-cover" [src]="chat?.avatar_url">
         <ion-icon class="chat-selected absolute" name="md-checkmark-circle" [hidden]="!chat?.openedOptions"></ion-icon>
       </ion-avatar>
 
-      <h2 class="user-name-preview">
+      <h2 class="user-name-preview" (tap)="openChatConversation($event, chat);">
         <ion-icon name="ios-star" class="yellow fsize-1" [hidden]="!chat?.is_favority"></ion-icon>&nbsp;{{ chat?.name }}
         <small style="font-size:0.6em;color:#666;">@{{ chat?.username }}</small>
       </h2>
 
-      <div class="text-center" item-right>
+      <div class="text-center" item-right (tap)="openChatConversation($event, chat);">
         <span class="user-notify-counter" [hidden]="chat?.unread_counter < 1">{{ chat?.unread_counter }}</span>
         <small class="last-message-date" [hidden]="chat?.unread_counter > 0">{{ chat?.last_view | date:'dd/MM/yyyy' }}</small>
       </div>
 
-      <p class="user-message-preview">
+      <p class="user-message-preview" (tap)="openChatConversation($event, chat);">
         <ion-icon class="middle" name="ios-eye-outline" [hidden]="(!chat?.messages[chat?.messages_count - 1].user_id == currentUser.user_id)"
                                                         *ngIf="chat?.messages[chat?.messages_count - 1].read"></ion-icon>
         <ion-icon name="ios-redo-outline" [hidden]="(!chat?.messages[chat?.messages_count - 1].user_id == currentUser.user_id)"></ion-icon>

@@ -44,6 +44,7 @@ $color__dark_gray: rgb(169, 169, 169);
 
 /** Margins */
 .mtop-0 { margin-top: 0 !important; }
+.mtop-1 { margin-top: 1px !important; }
 .mtop-3 { margin-top: 3px !important; }
 
 /** Padding */
@@ -51,6 +52,10 @@ $color__dark_gray: rgb(169, 169, 169);
 
 /** Backgrounds */
 .btn-primary { background-color: rgb(112, 128, 144) !important; }
+.bg-blank { background-color: #fff !important; }
+
+/** Border Radius */
+.radius-10 { border-radius: 10px !important; }
 
 /** Helpers */
 .text-center { text-align: center !important; }
@@ -100,4 +105,8 @@ $color__dark_gray: rgb(169, 169, 169);
 }
 .back-button {
   color: #fff !important;
+}
+
+.card.card-md {
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1), 0 1px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 
 import { UserProvider } from '../../../providers/auth/user';
@@ -8,7 +8,7 @@ import { ChatProvider } from '../../../providers/chat/chat';
   selector: 'page-bubble',
   templateUrl: 'bubble.html'
 })
-export class BubblePage implements OnInit, OnChanges, OnDestroy  {
+export class BubblePage implements OnInit  {
 
   chatData: any;
   currentUser: any;
@@ -18,7 +18,6 @@ export class BubblePage implements OnInit, OnChanges, OnDestroy  {
     private navCtrl: NavController,
     private navParams: NavParams,
     private chatProvider: ChatProvider,
-    private basicAlert: AlertController,
     private toastCtrl: ToastController
   ) {
     this.chatData = this.navParams.get('chat_data');
@@ -28,15 +27,6 @@ export class BubblePage implements OnInit, OnChanges, OnDestroy  {
 
   ngOnInit() {
     console.log(this.chatData);
-    console.info('ngOnInit');
-  }
-
-  ngOnChanges() {
-    console.info('ngOnChanges');
-  }
-
-  ngOnDestroy() {
-    console.info('ngOnDestroy');
   }
 
   ionViewWillEnter() {
@@ -63,6 +53,10 @@ export class BubblePage implements OnInit, OnChanges, OnDestroy  {
   messageTapped(e, message) {
     message.selected = true;
     console.log(e, message);
+  }
+
+  showBubbleOptions() {
+    console.log('Bubble options...');
   }
 
   /**

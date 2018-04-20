@@ -11,15 +11,15 @@
       </ion-row>
         <ion-row>
           <ion-col class="text-left" col-2>
-            <ion-avatar class="header-user-profile" item-start>
+            <ion-avatar class="header-user-profile" item-start (tap)="goToSelectedProfile(currentUser)">
               <img class="object-cover" [src]="currentUser.avatar_url">
             </ion-avatar>
           </ion-col>
           <ion-col class="text-center" col-8>
-            <ion-title>Descubra</ion-title>
+            <ion-title class="mtop-1">Descubra</ion-title>
           </ion-col>
           <ion-col class="text-right" col-2>
-            <ion-icon name="ios-settings-outline" class="header-icon-config fsize-1dot6 base-middle blank"></ion-icon>
+            <ion-icon name="ios-settings-outline" class="header-icon-config fsize-1dot6 base-middle blank" (tap)="goToConfigs()"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-grid>
