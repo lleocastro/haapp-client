@@ -25,6 +25,7 @@ import { Network } from '@ionic-native/network';
 import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
 import { PhotoLibrary } from '@ionic-native/photo-library';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer';
 import { Crop } from '@ionic-native/crop';
 import { Vibration } from '@ionic-native/vibration';
 
