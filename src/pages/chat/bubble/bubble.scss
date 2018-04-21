@@ -1,60 +1,44 @@
 .bubble__container {
   background-image: url('../../../assets/imgs/chat-background-1.png');
 
-  .chat-bubble-bubble,
   .chat-bubble-bubble {
-    padding: 5px;
-    border-radius: 5px;
     max-width: 90%;
   }
-  .chat-bubble-bubble > span,
-  .chat-bubble-bubble > span {
-    text-align: right;
-    font-size: .7em;
-    vertical-align: bottom;
-  }
 
-  .chat-bubble-bubble.myself {
-    background-color: beige;
-    float: right;
-    margin: 2px;
-  }
-
-  .chat-bubble-bubble.otheruser {
-    background-color: #fff;
-  }
-
-  .chat-bubble-bubble-like {
-    font-size: 1.7em;
-    vertical-align: middle;
-  }
+  .chat-bubble-bubble.myself { background-color: rgb(245, 245, 220); }
+  .chat-bubble-bubble.otheruser { background-color: $color__blank; }
 
   .chat-bubble-bubble-visualized {
     margin-top: -10px;
-    font-size: .7em;
   }
 
-}
+  .before-image-load {
+    width: 291px;
+    height: 200px;
 
-.chat-bubble-header-username {
-  display: block;
-  font-size: .5em;
-  color: $color__gray;
-}
+    .img-download {
+      padding: 10px 23px;
+      border-radius: 5%;
+      background-color: rgba(0, 0, 0, .4);
+    }
 
-.chat-bubble-header-data {
-  text-align: right;
-  font-size: .7em;
-  color: $color__gray;
+  }
+
+
 }
 
 .footer.footer-md.bubble-footer .toolbar-background-md {
   background-color: transparent !important;
 }
+
+.footer.footer-md.bubble-footer .bubble-textbox.noexpand {
+  height: 16px !important;
+}
 .footer.footer-md.bubble-footer .send-message {
-  border-radius: 100%;
-  height: 44px;
-  padding-left: 3px;
-  margin-top: 8px;
-  margin-left: 7px;
+  color: $color__primary;
+}
+.footer.footer-md.bubble-footer .bubble-textbox .text-input.text-input-md {
+  margin-top: 0;
+  margin-left: 0;
+  height: 100%;
 }

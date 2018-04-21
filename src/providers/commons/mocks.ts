@@ -127,6 +127,7 @@ export class Mocks {
             id: 1,
             user_id: 0,
             text: 'Olá chew! como se tá? ^^',
+            image_url: null,
             liked: false,
             read: false,
             created_at: new Date()
@@ -135,6 +136,7 @@ export class Mocks {
             id: 2,
             user_id: 3,
             text: 'Ahhhhhhhhhh eu to bem, porq?',
+            image_url: null,
             liked: false,
             read: false,
             created_at: new Date()
@@ -143,6 +145,7 @@ export class Mocks {
             id: 3,
             user_id: 0,
             text: 'Ok então. :0',
+            image_url: null,
             liked: false,
             read: false,
             created_at: new Date()
@@ -151,6 +154,7 @@ export class Mocks {
             id: 4,
             user_id: 0,
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing eli. Sit amet consectetur... adipisicing, dolor, dolor, dolor',
+            image_url: 'https://picsum.photos/320/200/?random',
             liked: false,
             read: false,
             created_at: new Date()
@@ -159,6 +163,7 @@ export class Mocks {
             id: 5,
             user_id: 1,
             text: 'adipisicing, dolor, dolor, dolor',
+            image_url: null,
             liked: true,
             read: false,
             created_at: new Date()

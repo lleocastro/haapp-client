@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 
 import { UserProvider } from '../../../providers/auth/user';
 import { ChatProvider } from '../../../providers/chat/chat';
+
+import { CodeEditorPage } from './code-editor/code-editor';
 
 @Component({
   selector: 'page-bubble',
@@ -14,12 +16,18 @@ export class BubblePage implements OnInit  {
   currentUser: any;
   protected tabBarElement: any;
 
+  chatMessage:any;
+
   constructor(
     private navCtrl: NavController,
     private navParams: NavParams,
-    private chatProvider: ChatProvider,
-    private toastCtrl: ToastController
+    private modalCtrl: ModalController,
+    private chatProvider: ChatProvider
   ) {
+    this.chatMessage = {
+      text: ''
+    };
+
     this.chatData = this.navParams.get('chat_data');
     this.currentUser = UserProvider.getUser();
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
@@ -39,15 +47,26 @@ export class BubblePage implements OnInit  {
 
   likeToggle(message) {
     message.liked = !message.liked;
+  }
 
-    if (message.liked) {
-      let toast = this.toastCtrl.create({
-        message: 'Uhuhh! Curtiu...',
-        duration: 3000
-      });
+  getImage(e) {
+    console.log('get image');
+  }
 
-      toast.present();
-    }
+  showMessageImage(e, message) {
+    message.showImage = true;
+  }
+
+  showCodeEditor(e) {
+    this.modalCtrl.create(CodeEditorPage).present();
+  }
+
+  isTyping(e) {
+    console.log('is typing...');
+  }
+
+  send(e) {
+    console.log('send');
   }
 
   messageTapped(e, message) {
@@ -56,7 +75,11 @@ export class BubblePage implements OnInit  {
   }
 
   showBubbleOptions() {
-    console.log('Bubble options...');
+    console.log('bubble options');
+  }
+
+  goToProfile() {
+    console.log('go profile');
   }
 
   /**

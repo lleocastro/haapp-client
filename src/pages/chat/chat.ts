@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ActionSheetController } from 'ionic-angular';
+import { Vibration } from '@ionic-native/vibration';
 
 import { UserProvider } from '../../providers/auth/user';
 import { ChatProvider } from '../../providers/chat/chat';
@@ -20,6 +21,7 @@ export class ChatPage implements OnInit {
   constructor(
     public navCtrl: NavController,
     private chatProvider: ChatProvider,
+    private vibration: Vibration,
     private actionSheetCtrl: ActionSheetController
   ) {
     this.currentUser = UserProvider.getUser();
@@ -35,6 +37,10 @@ export class ChatPage implements OnInit {
   }
 
   openChatOptions(e, chatData) {
+    // Vibrate the device for a second
+    // Duration is ignored on iOS.
+    this.vibration.vibrate(1000);
+
     chatData.openedOptions = true;
 
     let actionSheet = this.actionSheetCtrl.create({

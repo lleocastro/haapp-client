@@ -6,21 +6,21 @@
           <h5 class="fweight blank mtop-0">Haapp</h5>
         </ion-col>
         <ion-col class="text-right" col-9>
-          <ion-icon name="ios-search" class="header-icon-config blank"></ion-icon>
+          <ion-icon name="ios-search" class="fsize-1dot5 base-middle blank"></ion-icon>
           <!-- <ion-searchbar></ion-searchbar> -->
         </ion-col>
       </ion-row>
         <ion-row>
           <ion-col class="text-left" col-2>
-            <ion-avatar class="header-user-profile" item-start (tap)="goToSelectedProfile(currentUser)">
-              <img class="object-cover" [src]="currentUser.avatar_url">
+            <ion-avatar class="header-user-profile radius-100 hidden" item-start (tap)="goToSelectedProfile(currentUser)">
+              <img [src]="currentUser.avatar_url" class="object-cover wh-100">
             </ion-avatar>
           </ion-col>
           <ion-col class="text-center" col-8>
             <ion-title class="mtop-1">Conversas</ion-title>
           </ion-col>
           <ion-col class="text-right" col-2>
-            <ion-icon name="ios-settings-outline" class="header-icon-config fsize-1dot6 base-middle blank" (tap)="goToConfigs()"></ion-icon>
+            <ion-icon name="ios-settings-outline" class="fsize-1dot5 base-middle fsize-1dot6 base-middle blank" (tap)="goToConfigs()"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-grid>
