@@ -16,14 +16,24 @@ import { ConfigsPage } from '../pages/configs/configs';
 import { UserProvider } from '../providers/auth/user';
 import { ChatProvider } from '../providers/chat/chat';
 
+import { CodeEditorPage } from '../pages/chat/bubble/code-editor/code-editor';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { Network } from '@ionic-native/network';
+import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
+import { PhotoLibrary } from '@ionic-native/photo-library';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { Crop } from '@ionic-native/crop';
+import { Vibration } from '@ionic-native/vibration';
 
 @NgModule({
   declarations: [
     MyApp,
     ChatPage,
     BubblePage,
+    CodeEditorPage,
     PeoplesPage,
     DiscoverPage,
     TabsPage,
@@ -39,6 +49,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     ChatPage,
     BubblePage,
+    CodeEditorPage,
     PeoplesPage,
     DiscoverPage,
     TabsPage,
@@ -47,8 +58,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    Network,
     UserProvider,
     ChatProvider,
+    Vibration,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
