@@ -11,11 +11,11 @@ import { PeoplesPage } from '../pages/peoples/peoples';
 import { DiscoverPage } from '../pages/discover/discover';
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { ConfigsPage } from '../pages/configs/configs';
-
 import { UserProvider } from '../providers/auth/user';
 import { ChatProvider } from '../providers/chat/chat';
 
+import { ConfigsPage } from '../pages/configs/configs';
+import { ProfilePage } from '../pages/peoples/profile/profile';
 import { CodeEditorPage } from '../pages/chat/bubble/code-editor/code-editor';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -34,6 +34,7 @@ import { Vibration } from '@ionic-native/vibration';
     MyApp,
     ChatPage,
     BubblePage,
+    ProfilePage,
     CodeEditorPage,
     PeoplesPage,
     DiscoverPage,
@@ -50,6 +51,7 @@ import { Vibration } from '@ionic-native/vibration';
     MyApp,
     ChatPage,
     BubblePage,
+    ProfilePage,
     CodeEditorPage,
     PeoplesPage,
     DiscoverPage,
