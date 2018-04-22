@@ -9,17 +9,21 @@ export class Mocks {
         name: 'Leonardo B. Castro',
         username: 'lecastro',
         photos: [
-          {url: '../../assets/imgs/mocks/my.jpg', default: true},
-          {url: '', default: false},
-          {url: '', default: false}
+          {url: '../../assets/imgs/mocks/my.jpg', default: true}
         ],
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
         job_or_school: 'Analista/Desenvolvedor Web',
-        minibio: '',
+        minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
         tags: [],
-        publications_counter: 9999,
+        following: [
+          {user_id: 2, is_favority: true},
+          {user_id: 3, is_favority: false},
+          {user_id: 4, is_favority: false},
+          {user_id: 5, is_favority: false}
+        ],
+        geolocation: {latitude: '', longitude: ''},
         current_status: false
       },
       {
@@ -35,9 +39,14 @@ export class Mocks {
         updated_at: new Date(),
         birth_year: 1994,
         job_or_school: '',
-        minibio: '',
+        minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
         tags: [],
-        publications_counter: 0,
+        following: [
+          {user_id: 3, is_favority: false},
+          {user_id: 4, is_favority: false},
+          {user_id: 5, is_favority: false}
+        ],
+        geolocation: {latitude: '', longitude: ''},
         current_status: true
       },
       {
@@ -46,34 +55,33 @@ export class Mocks {
         username: 'awong',
         photos: [
           {url: '../../assets/imgs/mocks/ada.jpg', default: true},
-          {url: '', default: false},
-          {url: '', default: false}
+          {url: '../../assets/imgs/mocks/ada2.jpg', default: false},
+          {url: '../../assets/imgs/mocks/ada3.jpg', default: false}
         ],
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
-        job_or_school: '',
-        minibio: '',
+        job_or_school: 'Matadora de Zumbis',
+        minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
         tags: [],
-        publications_counter: 0,
-        current_status: false
+        following: [{user_id: 0, is_favority: true}, {user_id: 5, is_favority: true}],
+        current_status: true
       },
       {
         user_id: 3,
         name: 'Kratos',
         username: 'god.krats',
         photos: [
-          {url: '../../assets/imgs/mocks/kratos.jpg', default: true},
-          {url: '', default: false},
-          {url: '', default: false}
+          {url: '../../assets/imgs/mocks/kratos.jpg', default: true}
         ],
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
         job_or_school: '',
-        minibio: '',
+        minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
         tags: [],
-        publications_counter: 0,
+        following: [],
+        geolocation: {latitude: '', longitude: ''},
         current_status: false
       },
       {
@@ -81,17 +89,20 @@ export class Mocks {
         name: 'Leon Scott Kennedy',
         username: '_srkennedy_',
         photos: [
-          {url: '../../assets/imgs/mocks/leon.jpg', default: true},
-          {url: '', default: false},
-          {url: '', default: false}
+          {url: '../../assets/imgs/mocks/leon.jpg', default: true}
         ],
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
         job_or_school: '',
-        minibio: '',
+        minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
         tags: [],
-        publications_counter: 0,
+        following: [
+          {user_id: 1, is_favority: false},
+          {user_id: 2, is_favority: false},
+          {user_id: 3, is_favority: false}
+        ],
+        geolocation: {latitude: '', longitude: ''},
         current_status: false
       },
       {
@@ -99,17 +110,16 @@ export class Mocks {
         name: 'Chuck Norris',
         username: 'chuck_norris',
         photos: [
-          {url: '../../assets/imgs/mocks/chuck.jpg', default: true},
-          {url: '', default: false},
-          {url: '', default: false}
+          {url: '../../assets/imgs/mocks/chuck.jpg', default: true}
         ],
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
         job_or_school: '',
-        minibio: '',
+        minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
         tags: [],
-        publications_counter: 0,
+        following: [{user_id: 0, is_favority: false}],
+        geolocation: {latitude: '', longitude: ''},
         current_status: true
       }
     ];

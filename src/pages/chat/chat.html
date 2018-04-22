@@ -36,8 +36,8 @@
       </ion-avatar>
 
       <h2 class="user-name-preview" (tap)="openChatConversation($event, chat);">
-        <ion-icon name="ios-star" class="yellow fsize-1" [hidden]="!chat?.is_favority"></ion-icon>&nbsp;{{ chat?.name }}
-        <small style="font-size:0.6em;color:#666;">@{{ chat?.username }}</small>
+        {{ chat?.name }}
+        <small class="fsize-dot7 gray">@{{ chat?.username }}</small>
       </h2>
 
       <div class="text-center" item-right (tap)="openChatConversation($event, chat);">

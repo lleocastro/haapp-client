@@ -8,19 +8,6 @@
     font-size: .8em !important;
   }
 
-  .user-status-preview {
-    display: block;
-    text-shadow: 1px 1px 10px;
-  }
-
-  .user-status-preview.online {
-    color: $color__message_checked;
-  }
-
-  .user-status-preview.offline {
-    color: $color__light_gray;
-  }
-
   .user-notify-counter {
     background-color: $color__gray;
     border-radius: 100%;

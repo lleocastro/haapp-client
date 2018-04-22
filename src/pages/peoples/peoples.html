@@ -2,38 +2,72 @@
   <ion-navbar>
     <ion-grid>
       <ion-row>
-        <ion-col class="text-left" col-10>
+        <ion-col class="text-left" col-3>
           <h5 class="fweight blank mtop-0">Haapp</h5>
         </ion-col>
-        <ion-col class="text-right" col-2>
+        <ion-col class="text-right" col-9>
           <ion-icon name="ios-search" class="fsize-1dot5 base-middle blank"></ion-icon>
+          <!-- <ion-searchbar></ion-searchbar> -->
         </ion-col>
       </ion-row>
-        <ion-row>
-          <ion-col class="text-left" col-2>
-            <ion-avatar class="header-user-profile radius-100 hidden" item-start (tap)="goToSelectedProfile(currentUser)">
-              <img [src]="currentUser.avatar_url" class="object-cover wh-100">
-            </ion-avatar>
-          </ion-col>
-          <ion-col class="text-center" col-8>
-            <ion-title class="mtop-1">Pessoas</ion-title>
-          </ion-col>
-          <ion-col class="text-right" col-2>
-            <ion-icon name="ios-settings-outline" class="fsize-1dot5 base-middle fsize-1dot6 base-middle blank" (tap)="goToConfigs()"></ion-icon>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-row>
+        <ion-col class="text-left" col-2>
+          <ion-avatar class="header-user-profile radius-100 hidden" item-start (tap)="goToSelectedProfile(currentUser)">
+            <img [src]="currentUser.avatar_url" class="object-cover wh-100">
+          </ion-avatar>
+        </ion-col>
+        <ion-col class="text-center" col-8>
+          <ion-title class="mtop-1">Pessoas</ion-title>
+        </ion-col>
+        <ion-col class="text-right" col-2>
+          <ion-icon name="ios-settings-outline" class="fsize-1dot5 base-middle fsize-1dot6 base-middle blank" (tap)="goToConfigs()"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="people__container" padding>
-  <h2>Welcome to Peoples!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content class="people__container">
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider color="light">Por perto</ion-item-divider>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="img/avatar-finn.png">
+        </ion-avatar>
+        <h2>Finn</h2>
+        <p>I've had a pretty messed up day. If we just...</p>
+      </ion-item>
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider color="light">Seguindo</ion-item-divider>
+
+      <ion-item *ngFor="let user of currentUser?.following" (tap)="goToSelectedProfile(user)">
+        <ion-avatar class="relative" item-start>
+          <img [src]="user?.avatar_url" class="object-cover">
+        </ion-avatar>
+
+        <h2>
+          <ion-icon name="ios-star" class="yellow" [hidden]="!user?.is_favority"></ion-icon>
+          {{ user?.name }}&nbsp;<small class="fsize-dot7 gray">@{{ user?.username }}</small>
+        </h2>
+
+        <div class="text-center" item-right>
+          <span class="user-status-preview fsize-dot8" [ngClass]="{'online': user?.current_status, 'offline': !user?.current_status}">
+            {{ (user?.current_status) ? 'online' : 'offline' }}
+          </span>
+        </div>
+
+        <p class="black-gray fsize-dot8">{{ user?.minibio }}</p>
+      </ion-item>
+
+    </ion-item-group>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab mini class="btn-primary">
+      <ion-icon name="ios-person-add-outline"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

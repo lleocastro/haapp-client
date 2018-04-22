@@ -1,0 +1,22 @@
+.profile__container {
+
+  .photo-slider {
+    min-height: 50% !important;
+    max-height: 75% !important;
+  }
+
+  .photo-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: $color__primary !important;
+  }
+
+  .num-border {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+
+}

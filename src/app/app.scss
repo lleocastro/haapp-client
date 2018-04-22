@@ -24,24 +24,32 @@ $color__favority_chat: #FFE426;
 $color__message_liked: #E33F3D;
 $color__turquoise: rgb(64, 224, 208);
 $color__light_gray: #ccc;
+$color__black_gray: #333;
 $color__blank: #fff;
 $color__gray: #666;
+$color__black: #000;
 $color__dark_gray: rgb(169, 169, 169);
 
 /** Colors to dynamic conditionals */
-.blank { color: $color__blank !important;; }
+.blank { color: $color__blank !important; }
+.black { color: $color__black !important; }
 .gray { color: $color__gray !important; }
 .light-gray { color: $color__light_gray !important; }
+.dark-gray { color: $color__dark_gray !important; }
+.black-gray { color: $color__black_gray !important; }
 .green { color: $color__message_checked !important; }
 .yellow { color: $color__favority_chat !important; }
 .red { color: $color__message_liked !important; }
 
 /** Fonts */
 .fsize-dot5 { font-size: .5em !important; }
+.fsize-dot6 { font-size: .6em !important; }
 .fsize-dot7 { font-size: .7em !important; }
 .fsize-dot8 { font-size: .8em !important; }
+.fsize-dot9 { font-size: .9em !important; }
 .fsize-1 { font-size: 1em !important; }
 .fsize-1dot2 { font-size: 1.2em !important; }
+.fsize-1dot4 { font-size: 1.4em !important; }
 .fsize-1dot5 { font-size: 1.5em !important; }
 .fsize-1dot6 { font-size: 1.6em !important; }
 .fsize-1dot7 { font-size: 1.7em !important; }
@@ -53,13 +61,16 @@ $color__dark_gray: rgb(169, 169, 169);
 /** Font Styles */
 .fweight { font-weight: normal !important; }
 .fweight-100 { font-weight: 100 !important; }
+.fweight-300 { font-weight: 300 !important; }
 .tcenter { text-align: center !important; }
 .tleft { text-align: left !important; }
 .tright { text-align: right !important; }
 .nowrap { white-space: nowrap !important; }
 
 /** Margins */
+.m-0 { margin: 0 !important; }
 .m-2 { margin: 2px !important; }
+.m-3 { margin: 3px !important; }
 .mtop-0 { margin-top: 0 !important; }
 .mtop-1 { margin-top: 1px !important; }
 .mtop-3 { margin-top: 3px !important; }
@@ -73,6 +84,7 @@ $color__dark_gray: rgb(169, 169, 169);
 /** Backgrounds */
 .btn-primary { background-color: rgb(112, 128, 144) !important; }
 .bg-blank { background-color: $color__blank !important; }
+.bg-primary { background-color: $color__primary !important; }
 
 /** Border Radius */
 .radius-5 { border-radius: 5px !important }
