@@ -14,17 +14,15 @@ export class Mocks {
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
+        region: 'São José dos Campos',
         job_or_school: 'Analista/Desenvolvedor Web',
         minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
-        tags: [],
-        following: [
-          {user_id: 2, is_favority: true},
-          {user_id: 3, is_favority: false},
-          {user_id: 4, is_favority: false},
-          {user_id: 5, is_favority: false}
-        ],
+        tags: ['nerd'],
+        following: [{user_id: 2}, {user_id: 3}, {user_id: 4}, {user_id: 5}],
+        followers: [{user_id: 2}],
+        profile_views: [{user_id: 0}, {user_id: 5}, {user_id: 1}],
         geolocation: {latitude: '', longitude: ''},
-        current_status: false
+        current_status: true
       },
       {
         user_id: 1,
@@ -38,14 +36,13 @@ export class Mocks {
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
+        region: '',
         job_or_school: '',
         minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
-        tags: [],
-        following: [
-          {user_id: 3, is_favority: false},
-          {user_id: 4, is_favority: false},
-          {user_id: 5, is_favority: false}
-        ],
+        tags: ['xxx'],
+        following: [{user_id: 3}, {user_id: 4}, {user_id: 5}],
+        followers: [],
+        profile_views: [],
         geolocation: {latitude: '', longitude: ''},
         current_status: true
       },
@@ -61,10 +58,14 @@ export class Mocks {
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
+        region: 'Raccon City',
         job_or_school: 'Matadora de Zumbis',
         minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
-        tags: [],
-        following: [{user_id: 0, is_favority: true}, {user_id: 5, is_favority: true}],
+        tags: ['mortes', 'natureza', 'comida'],
+        following: [{user_id: 0}, {user_id: 5}],
+        followers: [{user_id: 0}],
+        profile_views: [{user_id: 4}, {user_id: 5}],
+        geolocation: {latitude: '', longitude: ''},
         current_status: true
       },
       {
@@ -77,10 +78,13 @@ export class Mocks {
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
+        region: '',
         job_or_school: '',
         minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
-        tags: [],
+        tags: ['gods', 'armas_magicas', 'mortes'],
         following: [],
+        followers: [],
+        profile_views: [],
         geolocation: {latitude: '', longitude: ''},
         current_status: false
       },
@@ -94,14 +98,13 @@ export class Mocks {
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
+        region: '',
         job_or_school: '',
         minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
-        tags: [],
-        following: [
-          {user_id: 1, is_favority: false},
-          {user_id: 2, is_favority: false},
-          {user_id: 3, is_favority: false}
-        ],
+        tags: ['ada'],
+        following: [{user_id: 1}, {user_id: 2}, {user_id: 3}],
+        followers: [],
+        profile_views: [],
         geolocation: {latitude: '', longitude: ''},
         current_status: false
       },
@@ -115,10 +118,13 @@ export class Mocks {
         created_at: new Date(),
         updated_at: new Date(),
         birth_year: 1994,
+        region: '',
         job_or_school: '',
         minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
-        tags: [],
-        following: [{user_id: 0, is_favority: false}],
+        tags: ['soufoda'],
+        following: [{user_id: 0}],
+        followers: [],
+        profile_views: [],
         geolocation: {latitude: '', longitude: ''},
         current_status: true
       }
@@ -131,7 +137,6 @@ export class Mocks {
         chat_id: 1,
         chat_uuid: '99603135-bbe9-2ce6-684b-36c9af7827a9',
         last_view: new Date(),
-        is_favority: false,
         messages: [
           {
             id: 1,
@@ -184,7 +189,6 @@ export class Mocks {
         chat_id: 2,
         chat_uuid: 'dc8ac570-fc88-0b7f-25c3-9775c3cb3f0e',
         last_view: new Date(),
-        is_favority: true,
         messages: [
           {
             id: 1,
@@ -200,7 +204,6 @@ export class Mocks {
         chat_id: 3,
         chat_uuid: '62504191-8652-be47-9a3b-4a8ce9f9a69a',
         last_view: new Date(),
-        is_favority: false,
         messages: [
           {
             id: 1,
@@ -216,7 +219,6 @@ export class Mocks {
         chat_id: 5,
         chat_uuid: 'd024d446-65ac-26ac-13a4-e94252bddf61',
         last_view: new Date(),
-        is_favority: false,
         messages: [
           {
             id: 1,
@@ -283,30 +285,6 @@ export class Mocks {
             created_at: new Date()
           }
         ]
-      },
-      {
-        chat_id: 4,
-        chat_uuid: 'cdd96d50-92f9-49d0-f7e2-434b384f4227',
-        last_view: new Date(),
-        is_favority: false,
-        messages: [
-          {
-            id: 1,
-            user_id: 5,
-            text: 'Esse tal de kratos ta ferrado!',
-            liked: false,
-            read: true,
-            created_at: new Date()
-          },
-          {
-            id: 2,
-            user_id: 0,
-            text: 'Manda verrr...',
-            liked: true,
-            read: true,
-            created_at: new Date()
-          }
-        ]
       }
     ];
   }
@@ -328,10 +306,6 @@ export class Mocks {
       {
         users_id_associated: [0, 4],
         chat_uuid: 'd024d446-65ac-26ac-13a4-e94252bddf61'
-      },
-      {
-        users_id_associated: [0, 5],
-        chat_uuid: 'cdd96d50-92f9-49d0-f7e2-434b384f4227'
       }
     ]
   }

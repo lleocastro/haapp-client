@@ -2,23 +2,23 @@
   <ion-navbar>
     <ion-grid>
       <ion-row>
-        <ion-col class="text-left" col-10>
+        <ion-col class="left" col-10>
           <h5 class="fweight blank mtop-0">Haapp</h5>
         </ion-col>
-        <ion-col class="text-right" col-2>
+        <ion-col class="tright" col-2>
           <ion-icon name="ios-search" class="fsize-1dot5 base-middle blank"></ion-icon>
         </ion-col>
       </ion-row>
         <ion-row>
-          <ion-col class="text-left" col-2>
+          <ion-col class="tleft" col-2>
             <ion-avatar class="header-user-profile radius-100 hidden" item-start (tap)="goToSelectedProfile(currentUser)">
               <img [src]="currentUser.avatar_url" class="object-cover wh-100">
             </ion-avatar>
           </ion-col>
-          <ion-col class="text-center" col-8>
+          <ion-col class="tcenter" col-8>
             <ion-title class="mtop-1">Descubra</ion-title>
           </ion-col>
-          <ion-col class="text-right" col-2>
+          <ion-col class="tright" col-2>
             <ion-icon name="ios-settings-outline" class="fsize-1dot5 base-middle fsize-1dot6 base-middle blank" (tap)="goToConfigs()"></ion-icon>
           </ion-col>
         </ion-row>

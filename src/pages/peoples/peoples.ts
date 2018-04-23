@@ -27,6 +27,8 @@ export class PeoplesPage {
     this.currentUser.following.forEach(follower => {
       _.merge(follower, this.userProvider.getUserById(follower.user_id));
     });
+
+    this.currentUser.following.sort((a, b) => b.current_status);
   }
 
   goToSelectedProfile(user) {

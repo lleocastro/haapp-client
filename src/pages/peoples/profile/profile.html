@@ -1,90 +1,105 @@
 <ion-content class="profile__container">
-    <ion-slides class="photo-slider" pager>
-      <ion-slide class="photo-background" *ngFor="let photo of currentUser?.photos"
-                 [ngStyle]="{'background-image': 'url('+photo?.url+')'}"></ion-slide>
-    </ion-slides>
+  <ion-slides class="photo-slider" pager>
+    <ion-slide class="photo-background" *ngFor="let photo of currentUser?.photos"
+                                        [ngStyle]="{'background-image': 'url('+photo?.url+')'}"></ion-slide>
+  </ion-slides>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col col-12>
-          <h3 class="m-0 fsize-1dot4 black-gray">
-            {{ currentUser?.name }},&nbsp;<span>{{ currentUser?.birth }}</span>
-          </h3>
-          <p class="m-3 gray">
-            <ion-icon name="ios-hammer-outline"></ion-icon>
-            &nbsp;{{ currentUser?.job_or_school }}
-          </p>
-          <p class="m-3 gray">
-            <ion-icon name="md-globe"></ion-icon>
-            &nbsp;{{ 'São José dos Campos, SP' }}
-          </p>
-        </ion-col>
-      </ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>
+        <h3 class="m-0 fsize-1dot4 black-gray">
+          {{ currentUser?.name }},&nbsp;<span>{{ currentUser?.birth }}</span>
+        </h3>
+        <p class="m-3 gray" [hidden]="!currentUser?.job_or_school.length">
+          <ion-icon name="ios-hammer-outline"></ion-icon>
+          &nbsp;{{ currentUser?.job_or_school }}
+        </p>
+        <p class="m-3 gray" [hidden]="!currentUser?.region.length">
+          <ion-icon name="md-globe"></ion-icon>
+          &nbsp;{{ currentUser?.region }}
+        </p>
+        <p class="m-3 gray">
+          <ion-icon name="ios-at-outline"></ion-icon>
+          &nbsp;{{ currentUser?.username }}
+        </p>
+      </ion-col>
+      <ion-col col-2>
+        <ion-grid class="h-100" *ngIf="lockUnecessaryResourcesForAuthUser">
+          <ion-row class="vcenter">
+            <div>
+              <span class="fsize-dot8" [ngClass]="{'green': currentUser?.current_status, 'light-gray': !currentUser?.current_status}">
+                {{ (currentUser?.current_status) ? 'online' : 'offline' }}
+              </span>
+            </div>
+          </ion-row>
+        </ion-grid>
 
-      <ion-row><ion-col col-12><hr></ion-col></ion-row>
+      </ion-col>
+    </ion-row>
 
-      <ion-row>
-        <ion-col col-12>
-          <p class="m-0 fweight-300 black">{{ currentUser?.minibio }}</p>
-        </ion-col>
-      </ion-row>
+    <ion-row><ion-col col-12><hr></ion-col></ion-row>
 
-      <ion-row><ion-col col-12><hr></ion-col></ion-row>
+    <ion-row>
+      <ion-col class="tcenter stats-border-right" col-3>
+        <span class="fweight-100">{{ currentUser?.profile_views.length }}</span>
+        <small class="light-gray block">Visualizações</small>
+      </ion-col>
+      <ion-col class="tcenter" col-3>
+        <span class="fweight-100">{{ currentUser?.followers.length }}</span>
+        <small class="light-gray block">Seguidores</small>
+      </ion-col>
+      <ion-col class="tcenter stats-border" col-3>
+        <span class="fweight-100">{{ currentUser?.following.length }}</span>
+        <small class="light-gray block">Seguindo</small>
+      </ion-col>
+      <ion-col class="tcenter" col-3>
+        <span class="fweight-100">12</span>
+        <small class="light-gray block">Publicações</small>
+      </ion-col>
+    </ion-row>
 
-      <ion-row>
-        <ion-col class="text-center" col-12>
-          <ion-badge class="fweight-300 fsize-dot9 bg-primary">Nerds</ion-badge>
-          <ion-badge class="fweight-300 fsize-dot9 bg-primary">Natureza</ion-badge>
-          <ion-badge class="fweight-300 fsize-dot9 bg-primary">Comida</ion-badge>
-        </ion-col>
-      </ion-row>
+    <ion-row><ion-col col-12><hr></ion-col></ion-row>
 
-      <ion-row><ion-col col-12><hr></ion-col></ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <p class="m-0 fweight-300 black">{{ currentUser?.minibio }}</p>
+      </ion-col>
+    </ion-row>
 
-      <ion-row>
-        <ion-col class="text-center" col-6>
-          <span class="base-middle">Números de Interações</span>
-        </ion-col>
-        <ion-col class="text-center" col-2>
-          <span class="fweight-100">12</span>
-          <small class="light-gray">Conversas</small>
-        </ion-col>
-        <ion-col class="text-center num-border" col-2>
-          <span class="fweight-100">74</span>
-          <small class="light-gray">Publicaç.</small>
-        </ion-col>
-        <ion-col class="text-center" col-2>
-          <span class="fweight-100">100</span>
-          <small class="light-gray">Seguindo</small>
-        </ion-col>
-      </ion-row>
+    <ion-row><ion-col col-12><hr></ion-col></ion-row>
 
-      <ion-row><ion-col col-12><hr></ion-col></ion-row>
+    <ion-row>
+      <ion-col class="tcenter" col-12>
+        <ion-badge class="fweight-300 fsize-dot9 m-3 btn-primary" *ngFor="let tag of currentUser?.tags">{{ tag }}</ion-badge>
+      </ion-col>
+    </ion-row>
 
-      <ion-row>
-        <ion-col col-6>
-          <button ion-button color="light" full>
-            {{ (false) ? 'Seguir' : 'Desseguir' }}&nbsp;@{{ currentUser?.username }}
-          </button>
-        </ion-col>
-        <ion-col col-6>
-          <button ion-button color="light" full>Bloquear&nbsp;@{{ currentUser?.username }}</button>
-        </ion-col>
-      </ion-row>
+    <ion-row><ion-col col-12><hr></ion-col></ion-row>
 
-      <ion-row>
-        <ion-col col-12>
-          <button ion-button color="danger" full>Denunciar Perfil</button>
-        </ion-col>
-      </ion-row>
+    <ion-row *ngIf="lockUnecessaryResourcesForAuthUser">
+      <ion-col col-12>
+        <button ion-button color="light" full round (tap)="followToggle()">
+          <ion-icon name="ios-close-outline" class="fsize-1dot8 bold" [hidden]="authUser?.im_follower == -1"></ion-icon>
+          <ion-icon name="ios-checkmark-outline" class="fsize-1dot8 bold" [hidden]="authUser?.im_follower != -1"></ion-icon>
+          &nbsp;&nbsp;{{ (authUser?.im_follower == -1) ? 'Seguir' : 'Desseguir' }}&nbsp;@{{ currentUser?.username }}
+        </button>
+      </ion-col>
+    </ion-row>
 
-    </ion-grid>
+    <ion-row *ngIf="lockUnecessaryResourcesForAuthUser">
+      <ion-col col-12>
+        <button ion-button class="btn-report" full block outline (tap)="reportProfilePrompt()">
+          <ion-icon name="ios-information-circle"></ion-icon>&nbsp;&nbsp;Denunciar Perfil
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-fab right bottom>
-    <!-- <button ion-fab mini class="btn-primary">
-      <ion-icon name="ios-create-outline ios-chatboxes-outline"></ion-icon>
-    </button> -->
-    <button ion-fab mini class="btn-primary">
+    <button ion-fab mini class="btn-primary" *ngIf="!lockUnecessaryResourcesForAuthUser" (tap)="editAuthUserProfile()">
+      <ion-icon name="ios-create-outline"></ion-icon>
+    </button>
+    <button ion-fab mini class="btn-primary" *ngIf="lockUnecessaryResourcesForAuthUser" (tap)="goToNewChat()">
       <ion-icon name="ios-chatboxes-outline"></ion-icon>
     </button>
   </ion-fab>

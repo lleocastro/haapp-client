@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-grid>
       <ion-row>
-        <ion-col class="text-left" col-10 (tap)="goToProfile()">
+        <ion-col class="tleft" col-10 (tap)="goToProfile(chatData)">
           <ion-avatar class="header-user-profile radius-100 hidden inline middle" item-start>
             <img [src]="chatData?.avatar_url" class="object-cover wh-100">
           </ion-avatar>
@@ -11,7 +11,7 @@
             <small class="fsize-dot5 block fweight-100 blank">@{{ chatData?.username }}</small>
           </ion-title>
         </ion-col>
-        <ion-col class="text-right" col-2 (tap)="showBubbleOptions()">
+        <ion-col class="tright" col-2 (tap)="showBubbleOptions()">
           <ion-icon name="md-more" class="fsize-1dot5 base-middle blank"></ion-icon>
         </ion-col>
       </ion-row>

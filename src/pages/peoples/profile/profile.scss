@@ -14,9 +14,17 @@
     background: $color__primary !important;
   }
 
-  .num-border {
-    border-left: 1px solid #ccc;
+  .stats-border,
+  .stats-border-right {
     border-right: 1px solid #ccc;
+  }
+  .stats-border {
+    border-left: 1px solid #ccc;
+  }
+
+  .btn-report {
+    border-color: $color__light_gray !important;
+    color: $color__light_gray !important;
   }
 
 }

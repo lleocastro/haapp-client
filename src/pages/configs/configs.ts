@@ -10,12 +10,24 @@ export class ConfigsPage {
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad');
+  }
+
   ionViewWillEnter() {
     this.tabBarElement.style.display = 'none';
   }
 
   ionViewWillLeave() {
     this.tabBarElement.style.display = 'flex';
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
+
+  ionViewWillUnload() {
+    console.log('ionViewWillUnload');
   }
 
 }

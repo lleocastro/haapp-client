@@ -19,6 +19,14 @@ export class DiscoverPage {
     this.relationship = 'feed';
   }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad');
+  }
+
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter');
+  }
+
   segmentChanged(e) {
     console.log(e, this.relationship);
   }
@@ -29,6 +37,14 @@ export class DiscoverPage {
 
   goToConfigs() {
     this.navCtrl.push(ConfigsPage);
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
+
+  ionViewWillUnload() {
+    console.log('ionViewWillUnload');
   }
 
 }

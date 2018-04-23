@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 
 import { UserProvider } from '../../../providers/auth/user';
 import { ChatProvider } from '../../../providers/chat/chat';
 
+import { ProfilePage } from '../../peoples/profile/profile';
 import { CodeEditorPage } from './code-editor/code-editor';
 
 @Component({
   selector: 'page-bubble',
   templateUrl: 'bubble.html'
 })
-export class BubblePage implements OnInit  {
+export class BubblePage {
+  protected tabBarElement: any;
 
   chatData: any;
   currentUser: any;
-  protected tabBarElement: any;
-
   chatMessage:any;
 
   constructor(
@@ -28,12 +28,12 @@ export class BubblePage implements OnInit  {
       text: ''
     };
 
-    this.chatData = this.navParams.get('chat_data');
     this.currentUser = UserProvider.getUser();
+    this.chatData = this.navParams.get('chat_data');
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
-  ngOnInit() {
+  ionViewDidLoad() {
     console.log(this.chatData);
   }
 
@@ -78,21 +78,16 @@ export class BubblePage implements OnInit  {
     console.log('bubble options');
   }
 
-  goToProfile() {
-    console.log('go profile');
+  goToProfile(data) {
+    this.navCtrl.push(ProfilePage, {user_data: data});
   }
 
-  /**
-   * UUID Generator
-   */
-  uuidGenerator() {
-    function s4() {
-      return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-    }
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
 
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+  ionViewWillUnload() {
+    console.log('ionViewWillUnload');
   }
 
 }

@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, ActionSheetController } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
 
 import { UserProvider } from '../../providers/auth/user';
 import { ChatProvider } from '../../providers/chat/chat';
 
-import { ConfigsPage } from '../configs/configs';
-
+import { ProfilePage } from '../peoples/profile/profile';
 import { BubblePage } from './bubble/bubble';
+import { ConfigsPage } from '../configs/configs';
 
 @Component({
   selector: 'page-chat',
   templateUrl: 'chat.html'
 })
-export class ChatPage implements OnInit {
+export class ChatPage {
 
   currentUser: any;
   chatPreviewList: Array<any>;
@@ -27,9 +27,14 @@ export class ChatPage implements OnInit {
     this.currentUser = UserProvider.getUser();
   }
 
-  ngOnInit() {
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad');
+  }
+
+  ionViewWillEnter() {
     this.chatPreviewList = this.chatProvider.getMyChat();
-    this.chatPreviewList.sort((a, b) => b.is_favority);
+    this.chatPreviewList.sort((a, b) => b.unread_counter);
+    console.log(this.chatPreviewList);
   }
 
   openChatConversation(e, chatData) {
@@ -76,12 +81,20 @@ export class ChatPage implements OnInit {
     console.log(e);
   }
 
-  goToSelectedProfile(chat) {
-    console.log(chat);
+  goToSelectedProfile(data) {
+    this.navCtrl.push(ProfilePage, {user_data: data});
   }
 
   goToConfigs() {
     this.navCtrl.push(ConfigsPage);
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
+
+  ionViewWillUnload() {
+    console.log('ionViewWillUnload');
   }
 
 }
