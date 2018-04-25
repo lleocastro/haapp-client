@@ -17,7 +17,7 @@ export class Mocks {
         region: 'São José dos Campos',
         job_or_school: 'Analista/Desenvolvedor Web',
         minibio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet',
-        tags: ['nerd'],
+        tags: ['dev'],
         following: [{user_id: 2}, {user_id: 3}, {user_id: 4}, {user_id: 5}],
         followers: [{user_id: 2}],
         profile_views: [{user_id: 0}, {user_id: 5}, {user_id: 1}],

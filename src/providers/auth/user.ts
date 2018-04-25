@@ -31,9 +31,9 @@ export class UserProvider {
     }
 
     let user = this.users[_.findIndex(this.users, {user_id: id})];
-    UserProvider.appendAvatarPhotoUrl(user);
+    if (user) UserProvider.appendAvatarPhotoUrl(user);
 
-    return user;
+    return user || {};
   }
 
   private static appendAvatarPhotoUrl(userObj: any) {

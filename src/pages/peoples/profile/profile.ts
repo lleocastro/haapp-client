@@ -89,7 +89,7 @@ export class ProfilePage {
 
   goToNewChat() {
     this.navCtrl.push(BubblePage, {
-      chat_data: _.merge(this.chatProvider.initNewChat(this.currentUser.user_id), this.currentUser)
+      chat_data: this.chatProvider.loadChatData(this.currentUser.user_id)
     });
   }
 

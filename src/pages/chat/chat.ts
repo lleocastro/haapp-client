@@ -32,7 +32,7 @@ export class ChatPage {
   }
 
   ionViewWillEnter() {
-    this.chatPreviewList = this.chatProvider.getMyChat();
+    this.chatPreviewList = this.chatProvider.mountChat();
     this.chatPreviewList.sort((a, b) => b.unread_counter);
     console.log(this.chatPreviewList);
   }

@@ -9,40 +9,74 @@ import { UserProvider } from '../auth/user';
 @Injectable()
 export class ChatProvider {
 
+  private uuids: Array<any>;
   private chatList: Array<any>;
-  private myChat: Array<any>;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private userProvider: UserProvider) {
     this.chatList = new Mocks().chatMessagesMock();
-  }
-
-  getMyChat(): Array<any> {
-    return this.myChat;
-  }
-
-  setMyChat(chat: Array<any>) {
-    this.myChat = chat;
+    this.uuids = new Mocks().uuidsMock();
   }
 
   getChatByUUID(uuid: string) {
     return this.chatList[_.findIndex(this.chatList, {chat_uuid: uuid})];
   }
 
-  initNewChat(withUserId: number) {
-    let uuid = this.uuidGenerator();
+  loadChatData(user_id: number) {
+    let chat = _.find(this.mountChat(), (chat) => {
+      return chat.user_id === user_id;
+    });
 
-    let payload = {
-      users_id_associated: [UserProvider.getUser().user_id, withUserId],
-      chat_uuid: uuid
-    };
+    if (!chat) {
+      let uuid = this.uuidGenerator();
 
-    console.log(payload);
+      chat = {
+        chat_uuid: uuid,
+        last_view: new Date(),
+        messages: []
+      }
 
-    return {chat_uuid: uuid};
+      let newUuid = {
+        users_id_associated: [UserProvider.getUser().user_id, user_id],
+        chat_uuid: uuid
+      }
+
+      console.log(chat, newUuid);
+      return _.assign(chat, this.userProvider.getUserById(user_id));
+    }
+
+    return chat;
   }
 
-  uuids() {
-    return new Mocks().uuidsMock();
+  mountChat() {
+    let currentUserId = UserProvider.getUser().user_id;
+    let chatList = [];
+
+    this.getUuids().forEach(uuid => {
+      let chat = this.getChatByUUID(uuid.chat_uuid);
+      let userAssociated;
+
+      uuid.users_id_associated.forEach(user_id => {
+        if (user_id !== currentUserId) {
+          userAssociated = this.userProvider.getUserById(user_id);
+        }
+      });
+
+      if (!(_.isEmpty(chat) || _.isEmpty(userAssociated))) {
+        chat.messages_count = chat.messages.length;
+
+        chat.unread_counter = _.filter(chat.messages, (message) => {
+          return message.read == false && message.user_id !== currentUserId;
+        }).length;
+
+        chatList.push(_.assign(chat, userAssociated));
+      }
+    });
+
+    return chatList;
+  }
+
+  getUuids() {
+    return this.uuids;
   }
 
   /**
