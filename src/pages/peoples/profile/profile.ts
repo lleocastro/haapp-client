@@ -31,7 +31,6 @@ export class ProfilePage {
   }
 
   ionViewDidLoad() {
-    this.currentUser.birth = (moment().year() - this.currentUser.birth_year);
     this.lockUnecessaryResourcesForAuthUser = !(this.currentUser.user_id == this.authUser.user_id);
     this.profileViewCounter();
     this.followLoad();
