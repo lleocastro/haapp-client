@@ -241,7 +241,7 @@ export class Mocks {
             user_id: 0,
             text: 'Aaaaaaaaaaaaaaaaaaaaaaaaa',
             liked: false,
-            read: false,
+            read: true,
             created_at: new Date()
           },
           {
@@ -249,15 +249,15 @@ export class Mocks {
             user_id: 0,
             text: 'Aaaaaaaaaaaaaaaaaaaaaaaaa',
             liked: false,
-            read: false,
+            read: true,
             created_at: new Date()
           },
           {
             id: 3,
             user_id: 0,
             text: 'Aaaaaaaaaaaaaaaaaaaaaaaaa',
-            liked: false,
-            read: false,
+            liked: true,
+            read: true,
             created_at: new Date()
           },
           {
@@ -265,7 +265,7 @@ export class Mocks {
             user_id: 0,
             text: 'Hahahahahahahahahahahahahahahhahahahaahahahahahahhahaahahha',
             liked: false,
-            read: false,
+            read: true,
             created_at: new Date()
           },
           {
@@ -273,7 +273,7 @@ export class Mocks {
             user_id: 0,
             text: 'Hahahahahahahahahahahahahahahhahahahaahahahahahahhahaahahha',
             liked: false,
-            read: false,
+            read: true,
             created_at: new Date()
           },
           {
@@ -281,15 +281,15 @@ export class Mocks {
             user_id: 0,
             text: 'Hahahahahahahahahahahahahahahhahahahaahahahahahahhahaahahha',
             liked: false,
-            read: false,
+            read: true,
             created_at: new Date()
           },
           {
             id: 7,
             user_id: 0,
             text: 'Hahahahahahahahahahahahahahahhahahahaahahahahahahhahaahahha',
-            liked: false,
-            read: false,
+            liked: true,
+            read: true,
             created_at: new Date()
           },
           {
@@ -297,7 +297,7 @@ export class Mocks {
             user_id: 4,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet felis porta, hendrerit nisl in, imperdiet sem. Suspendisse a odio felis. Suspendisse bibendum est eget tortor fermentum lobortis. Integer in vulputate purus. Quisque sodales, velit vel scelerisque dictum, lacus risus luctus dui, nec dignissim nibh arcu aliquam nibh. Ut euismod magna tincidunt porttitor vulputate. Nunc orci eros, malesuada a lobortis ac, vulputate non dolor.',
             liked: false,
-            read: false,
+            read: true,
             created_at: new Date()
           },
           {

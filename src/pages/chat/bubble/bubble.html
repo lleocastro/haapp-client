@@ -47,15 +47,14 @@
       <ion-icon class="fsize-1dot7 middle" name="ios-heart-outline" [hidden]="message?.liked"></ion-icon>
     </span>
 
-    <div style="margin-top:15px;margin-right:5px;text-align:right;" *ngIf="(i == (chatData?.messages.length-1)) && (message?.user_id == currentUser?.user_id)">
-      <small class="fsize-dot7 block">
-        <span [hidden]="!message?.read">
-          <ion-icon class="middle" name="ios-eye-outline"></ion-icon>&nbsp;visto
-        </span>
-        &nbsp;<span [hidden]="!message?.liked">
-          |&nbsp;&nbsp;<ion-icon name="ios-thumbs-up-outline"></ion-icon>&nbsp;curtiu
-        </span>
-      </small>
+    <div class="message-info" *ngIf="message?.user_id == currentUser?.user_id">
+      <span class="fsize-dot7 block pbottom-7 right" *ngIf="message?.read && (i == (chatData?.messages.length - 1))">
+        <ion-icon class="middle" name="ios-eye-outline"></ion-icon>&nbsp;visto
+      </span>
+      <span class="fsize-dot7 block pbottom-7 right" *ngIf="message?.liked">
+        <ion-icon name="ios-thumbs-up-outline"></ion-icon>&nbsp;curtiu
+        {{ (message?.read && (i == (chatData?.messages.length - 1))) ? '&nbsp;|&nbsp;' : '' }}
+      </span>
     </div>
 
     <div class="fix-float"></div>
