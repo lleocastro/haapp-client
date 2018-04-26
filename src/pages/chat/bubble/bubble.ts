@@ -5,7 +5,6 @@ import { UserProvider } from '../../../providers/auth/user';
 import { ChatProvider } from '../../../providers/chat/chat';
 
 import { ProfilePage } from '../../peoples/profile/profile';
-import { CodeEditorPage } from './code-editor/code-editor';
 
 @Component({
   selector: 'page-bubble',
@@ -16,7 +15,7 @@ export class BubblePage {
 
   chatData: any;
   currentUser: any;
-  chatMessage:any;
+  chatMessage: any;
 
   constructor(
     private navCtrl: NavController,
@@ -24,10 +23,7 @@ export class BubblePage {
     private modalCtrl: ModalController,
     private chatProvider: ChatProvider
   ) {
-    this.chatMessage = {
-      text: ''
-    };
-
+    this.chatMessage = { text: '' };
     this.currentUser = UserProvider.getUser();
     this.chatData = this.navParams.get('chat_data');
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
@@ -55,10 +51,6 @@ export class BubblePage {
 
   showMessageImage(e, message) {
     message.showImage = true;
-  }
-
-  showCodeEditor(e) {
-    this.modalCtrl.create(CodeEditorPage).present();
   }
 
   isTyping(e) {

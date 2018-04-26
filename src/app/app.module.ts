@@ -16,7 +16,6 @@ import { ChatProvider } from '../providers/chat/chat';
 
 import { ConfigsPage } from '../pages/configs/configs';
 import { ProfilePage } from '../pages/peoples/profile/profile';
-import { CodeEditorPage } from '../pages/chat/bubble/code-editor/code-editor';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,7 +34,6 @@ import { Vibration } from '@ionic-native/vibration';
     ChatPage,
     BubblePage,
     ProfilePage,
-    CodeEditorPage,
     PeoplesPage,
     DiscoverPage,
     TabsPage,
@@ -52,7 +50,6 @@ import { Vibration } from '@ionic-native/vibration';
     ChatPage,
     BubblePage,
     ProfilePage,
-    CodeEditorPage,
     PeoplesPage,
     DiscoverPage,
     TabsPage,

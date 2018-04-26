@@ -193,7 +193,23 @@ export class Mocks {
           {
             id: 1,
             user_id: 2,
-            text: 'Eai! Lindão ^^',
+            text: 'Eai! Lindão ;)',
+            liked: false,
+            read: true,
+            created_at: new Date()
+          },
+          {
+            id: 2,
+            user_id: 0,
+            text: '^^',
+            liked: true,
+            read: true,
+            created_at: new Date()
+          },
+          {
+            id: 3,
+            user_id: 2,
+            text: 'adipisicing eli. Sit amet consectetur... pisici',
             liked: true,
             read: true,
             created_at: new Date()
@@ -209,8 +225,8 @@ export class Mocks {
             id: 1,
             user_id: 0,
             text: 'Vai matar algum deus hoje? kkkk',
-            liked: false,
-            read: false,
+            liked: true,
+            read: true,
             created_at: new Date()
           }
         ]
@@ -277,11 +293,19 @@ export class Mocks {
             created_at: new Date()
           },
           {
-            id: 7,
+            id: 8,
             user_id: 4,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet felis porta, hendrerit nisl in, imperdiet sem. Suspendisse a odio felis. Suspendisse bibendum est eget tortor fermentum lobortis. Integer in vulputate purus. Quisque sodales, velit vel scelerisque dictum, lacus risus luctus dui, nec dignissim nibh arcu aliquam nibh. Ut euismod magna tincidunt porttitor vulputate. Nunc orci eros, malesuada a lobortis ac, vulputate non dolor.',
             liked: false,
             read: false,
+            created_at: new Date()
+          },
+          {
+            id: 9,
+            user_id: 0,
+            text: 'Porraaaaaaaaaaa',
+            liked: false,
+            read: true,
             created_at: new Date()
           }
         ]

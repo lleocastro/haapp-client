@@ -11,16 +11,8 @@
             <small class="fsize-dot5 block fweight-100 blank">@{{ chatData?.username }}</small>
           </ion-title>
         </ion-col>
-        <ion-col class="tright" col-2 (tap)="showBubbleOptions()">
+        <ion-col class="tright mtop-7" col-2 (tap)="showBubbleOptions()">
           <ion-icon name="md-more" class="fsize-1dot5 base-middle blank"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="tright" col-12>
-          <small class="fsize-dot7 fweight-100 blank">
-            visualizado às {{ chatData?.last_view | date:'hh:mm' }}
-            <!-- @{{ chatData?.username }} está digitando... -->
-          </small>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -55,9 +47,14 @@
       <ion-icon class="fsize-1dot7 middle" name="ios-heart-outline" [hidden]="message?.liked"></ion-icon>
     </span>
 
-    <div [hidden]="!(message?.user_id !== currentUser?.user_id && i == (chatData?.messages_count - 1) && message?.read)">
-      <small class="chat-bubble-bubble-visualized fsize-dot7 block">
-        <ion-icon class="middle" name="ios-eye-outline"></ion-icon>&nbsp;visto
+    <div style="margin-top:15px;margin-right:5px;text-align:right;" *ngIf="(i == (chatData?.messages.length-1)) && (message?.user_id == currentUser?.user_id)">
+      <small class="fsize-dot7 block">
+        <span [hidden]="!message?.read">
+          <ion-icon class="middle" name="ios-eye-outline"></ion-icon>&nbsp;visto
+        </span>
+        &nbsp;<span [hidden]="!message?.liked">
+          |&nbsp;&nbsp;<ion-icon name="ios-thumbs-up-outline"></ion-icon>&nbsp;curtiu
+        </span>
       </small>
     </div>
 
@@ -69,11 +66,10 @@
   <ion-toolbar>
       <ion-grid>
         <ion-row class="bg-blank radius-10">
-          <ion-col class="vcenter" col-2>
+          <ion-col class="vcenter" col-1>
             <ion-icon name="ios-images-outline" class="fsize-1dot8" (tap)="getImage($event)"></ion-icon>
-            &nbsp;&nbsp;&nbsp;<ion-icon name="ios-bug-outline" class="fsize-1dot8" (tap)="showCodeEditor($event)"></ion-icon>
           </ion-col>
-          <ion-col class="vcenter" col-9>
+          <ion-col class="vcenter" col-10>
             <ion-textarea class="bubble-textbox hidden" [(ngModel)]="chatMessage.text" (keyup)="isTyping($event)"
                                                         [ngClass]="{'noexpand': chatMessage.text.length < 34 }"  placeholder="Diga algo..."></ion-textarea>
           </ion-col>
