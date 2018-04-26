@@ -23,9 +23,9 @@ export class BubblePage {
     private modalCtrl: ModalController,
     private chatProvider: ChatProvider
   ) {
-    this.chatMessage = { text: '' };
     this.currentUser = UserProvider.getUser();
     this.chatData = this.navParams.get('chat_data');
+    this.chatMessage = { text: '', user_id: this.currentUser.user_id};
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
@@ -58,7 +58,18 @@ export class BubblePage {
   }
 
   send(e) {
-    console.log('send');
+    if (!this.chatMessage.text.length) return;
+
+    let payload = {
+      text: this.chatMessage.text,
+      user_id: this.chatMessage.user_id,
+      created_at: new Date()
+    }
+
+    this.chatData.messages.push(payload);
+    this.chatMessage.text = '';
+
+    console.log('send ', payload);
   }
 
   messageTapped(e, message) {
