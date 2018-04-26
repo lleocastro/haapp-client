@@ -38,7 +38,7 @@
       <img [src]="message?.image_url" class="bubble-bubble-img" *ngIf="(message?.image_url && message?.image_url.length)"
                                                                 [hidden]="!message.showImage"/>
 
-      {{ message?.text }}&nbsp;&nbsp;<span class="right fsize-dot7">{{ message?.created_at | date:'hh:mm' }}</span>
+      {{ message?.text }}&nbsp;&nbsp;<span class="right fsize-dot7 mtop-4">{{ message?.created_at | date:'hh:mm' }}</span>
       &nbsp;&nbsp;<ion-icon name="md-checkmark-circle" class="light-gray middle" [hidden]="!message?.selected"></ion-icon>
     </p>
 
