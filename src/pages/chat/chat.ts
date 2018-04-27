@@ -49,22 +49,18 @@ export class ChatPage {
     chatData.openedOptions = true;
 
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Selecionado',
+      // title: 'Selecionado',
       buttons: [
         {
           text: 'Apagar Conversa',
+          icon: 'ios-trash-outline',
           role: 'destructive',
           handler: () => {
             console.log('Destructive clicked');
           }
-        },{
-          text: 'Tornar Favorito',
-          role: 'favority',
-          handler: () => {
-            console.log('Favority clicked');
-          }
-        },{
+        }, {
           text: 'Cancelar',
+          icon: 'ios-close-circle-outline',
           role: 'cancel',
           handler: () => {
             chatData.openedOptions = false;
