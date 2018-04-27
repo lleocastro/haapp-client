@@ -26,11 +26,19 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="discover__container bg-f8">
 
-  <ion-segment [(ngModel)]="relationship" color="primary" (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="feed">Feed</ion-segment-button>
-    <ion-segment-button value="users">Usuários</ion-segment-button>
-  </ion-segment>
+  <ion-card>
+    <ion-card-header>Card Header</ion-card-header>
+    <ion-card-content>
+      <p>Hahahahhaahhaha</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button ion-fab mini class="btn-primary">
+      <ion-icon name="ios-bulb-outline"></ion-icon>
+    </button>
+  </ion-fab>
 
 </ion-content>
