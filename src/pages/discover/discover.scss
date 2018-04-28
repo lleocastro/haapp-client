@@ -1,1 +1,25 @@
-.discover__container {}
+.discover__container {
+
+  .card-header {
+    padding: 3px 7px !important;
+  }
+
+  .card-header .avatar {
+    width: 23px;
+    height: 23px;
+  }
+
+  .card-footer .infos {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .border-right {
+    border-right: 1px solid #ccc !important;
+  }
+  .border-top {
+    border-top: 1px solid #ccc !important;
+  }
+
+}

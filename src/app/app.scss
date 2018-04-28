@@ -82,7 +82,10 @@ $color__dark_gray: rgb(169, 169, 169);
 .mbottom { margin-bottom: 3px !important; }
 
 /** Padding */
+.p-0 { padding: 0 !important; }
+.p-3 { padding: 3px !important; }
 .p-5 { padding: 5px !important; }
+.ptop-3 { padding-top: 3px !important; }
 .ptop-10 { padding-top: 10px !important; }
 .pbottom-7 { padding-bottom: 7px !important; }
 
@@ -98,11 +101,13 @@ $color__dark_gray: rgb(169, 169, 169);
 .radius-100 { border-radius: 100% !important; }
 
 /** Alignments */
-.vcenter {
+.vcenter, .vend, .vstart {
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
 }
+.vcenter { justify-content: center !important; }
+.vend { justify-content: flex-end !important; }
+.vstart { justify-content: flex-end !important; }
 
 .right { float: right !important; }
 
