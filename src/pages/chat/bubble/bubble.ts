@@ -14,8 +14,11 @@ export class BubblePage {
   protected tabBarElement: any;
 
   chatData: any;
+
   currentUser: any;
   chatMessage: any;
+
+  chatBoxSpandable: any;
 
   constructor(
     private navCtrl: NavController,
@@ -30,6 +33,7 @@ export class BubblePage {
   }
 
   ionViewDidLoad() {
+    this.chatBoxSpandable = { height: 16 };
     console.log(this.chatData);
   }
 
@@ -49,12 +53,22 @@ export class BubblePage {
     console.log('get image');
   }
 
+  showEmojis(e) {
+    console.log('show emojis');
+  }
+
   showMessageImage(e, message) {
     message.showImage = true;
   }
 
   isTyping(e) {
-    console.log('is typing...');
+    if (e.keyCode == 13 && this.chatBoxSpandable.height < 120) {
+      this.chatBoxSpandable.height += 25;
+    } else if (e.keyCode == 8 && this.chatBoxSpandable.height > 16) {
+      this.chatBoxSpandable.height -= 5;
+    }
+
+    console.log('is typing... ');
   }
 
   send(e) {
@@ -69,6 +83,7 @@ export class BubblePage {
     this.chatData.messages.push(payload);
     this.chatMessage.text = '';
 
+    this.chatBoxSpandable.height = 16;
     console.log('send ', payload);
   }
 

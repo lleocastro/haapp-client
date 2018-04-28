@@ -21,12 +21,12 @@
 
 <ion-content class="bubble__container" padding>
   <div *ngFor="let message of chatData.messages; let i = index">
-    <p class="chat-bubble-bubble inline p-5 radius-5" [ngClass]="{'myself right m-2': message?.user_id == currentUser?.user_id,
-                                                                    'otheruser': message?.user_id !== currentUser?.user_id}"
-                                                        (press)="messageTapped($event, message)">
+    <p class="chat-bubble-bubble inline p-5 radius-5 pre-line" [ngClass]="{'myself right m-2': message?.user_id == currentUser?.user_id,
+                                                                           'otheruser': message?.user_id !== currentUser?.user_id}"
+                                                               (press)="messageTapped($event, message)">
 
       <span class="before-image-load relative bg-blank mbottom vcenter fsize-dot7" *ngIf="(message?.image_url && message?.image_url.length)
-                                                                               && !message.showImage">
+                                                                                                              && !message.showImage">
         <ion-icon name="ios-image-outline" class="fsize-24 blur-7"></ion-icon>
 
         <span class="img-download absolute" (tap)="showMessageImage($event, message)">
@@ -38,7 +38,7 @@
       <img [src]="message?.image_url" class="bubble-bubble-img" *ngIf="(message?.image_url && message?.image_url.length)"
                                                                 [hidden]="!message.showImage"/>
 
-      {{ message?.text }}&nbsp;&nbsp;<span class="right fsize-dot7 mtop-4">{{ message?.created_at | date:'hh:mm' }}</span>
+      {{ message?.text.trim() }}&nbsp;&nbsp;<span class="right fsize-dot7 mtop-4">{{ message?.created_at | date:'hh:mm' }}</span>
       &nbsp;&nbsp;<ion-icon name="md-checkmark-circle" class="light-gray middle" [hidden]="!message?.selected"></ion-icon>
     </p>
 
@@ -65,12 +65,14 @@
   <ion-toolbar>
       <ion-grid>
         <ion-row class="bg-blank radius-10">
-          <ion-col class="vcenter" col-1>
+          <ion-col class="vcenter" col-2>
             <ion-icon name="ios-images-outline" class="fsize-1dot8" (tap)="getImage($event)"></ion-icon>
+            &nbsp;&nbsp;&nbsp;<ion-icon name="ios-happy-outline" class="fsize-1dot8" (tap)="showEmojis($event)"></ion-icon>
           </ion-col>
-          <ion-col class="vcenter" col-10>
+          <ion-col class="vcenter" col-9>
             <ion-textarea class="bubble-textbox hidden" [(ngModel)]="chatMessage.text" (keyup)="isTyping($event)"
-                                                        [ngClass]="{'noexpand': chatMessage.text.length < 34 }"  placeholder="Diga algo..."></ion-textarea>
+                                                        [ngStyle]="{'height.px': chatBoxSpandable?.height}"
+                                                        placeholder="Diga algo..."></ion-textarea>
           </ion-col>
           <ion-col class="vcenter" col-1 (tap)="send($event)">
             <ion-icon name="md-send" class="send-message fsize-1dot8"></ion-icon>
