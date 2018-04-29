@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 
 import { UserProvider } from '../../providers/auth/user';
+import { SecretsProvider } from '../../providers/secrets/secrets';
 
 import { ConfigsPage } from '../configs/configs';
+import { QuotePage } from './quote/quote';
 
 @Component({
   selector: 'page-secrets',
@@ -12,23 +14,29 @@ import { ConfigsPage } from '../configs/configs';
 export class SecretsPage {
 
   currentUser: any;
-  relationship: any;
+  secrets: Array<any>;
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    private navCtrl: NavController,
+    private secretsProvider: SecretsProvider,
+    private modalCtrl: ModalController
+  ) {
+    this.secrets = [];
     this.currentUser = UserProvider.getUser();
-    this.relationship = 'feed';
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad');
+    this.secrets = this.secretsProvider.getSecrets();
+    console.log(this.secrets);
   }
 
-  ionViewWillEnter() {
-    console.log('ionViewWillEnter');
+  showSecretImage(e, secret) {
+    secret.showImage = true;
   }
 
-  segmentChanged(e) {
-    console.log(e, this.relationship);
+  goToQuote(e) {
+    let modal = this.modalCtrl.create(QuotePage);
+    modal.present();
   }
 
   goToSelectedProfile(chat) {

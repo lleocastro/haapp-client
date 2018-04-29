@@ -9,13 +9,16 @@ import { ChatPage } from '../pages/chat/chat';
 import { BubblePage } from '../pages/chat/bubble/bubble';
 import { PeoplesPage } from '../pages/peoples/peoples';
 import { SecretsPage } from '../pages/secrets/secrets';
+
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { UserProvider } from '../providers/auth/user';
 import { ChatProvider } from '../providers/chat/chat';
+import { SecretsProvider } from '../providers/secrets/secrets';
 
 import { ConfigsPage } from '../pages/configs/configs';
 import { ProfilePage } from '../pages/peoples/profile/profile';
+import { QuotePage } from '../pages/secrets/quote/quote';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,6 +40,7 @@ import { Vibration } from '@ionic-native/vibration';
     PeoplesPage,
     SecretsPage,
     TabsPage,
+    QuotePage,
     ConfigsPage
   ],
   imports: [
@@ -53,6 +57,7 @@ import { Vibration } from '@ionic-native/vibration';
     PeoplesPage,
     SecretsPage,
     TabsPage,
+    QuotePage,
     ConfigsPage
   ],
   providers: [
@@ -61,6 +66,7 @@ import { Vibration } from '@ionic-native/vibration';
     Network,
     UserProvider,
     ChatProvider,
+    SecretsProvider,
     Vibration,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

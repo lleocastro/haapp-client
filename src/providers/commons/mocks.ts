@@ -334,4 +334,44 @@ export class Mocks {
     ]
   }
 
+  secretsMock() {
+    return [
+      {
+        user_id: 0,
+        text: 'QUERO MATAR TODO MUNDOOOOOOOOOOO! UAHAHAHAHAH..',
+        image_url: null,
+        explicit_image: false,
+        created_at: new Date()
+      },
+      {
+        user_id: 2,
+        text: 'Queria foder com zumbis ;)',
+        image_url: null,
+        explicit_image: false,
+        created_at: new Date()
+      },
+      {
+        user_id: 5,
+        text: null,
+        image_url: 'https://picsum.photos/300/200',
+        explicit_image: false,
+        created_at: new Date()
+      },
+      {
+        user_id: 4,
+        text: '???',
+        image_url: 'https://picsum.photos/300/200',
+        explicit_image: true,
+        created_at: new Date()
+      },
+      {
+        user_id: 4,
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, atque eos omnis illo voluptas officia rem in quas! Sint doloribus ex minima sequi modi quis officiis dolorem praesentium culpa exercitationem!',
+        image_url: null,
+        explicit_image: false,
+        created_at: new Date()
+      }
+    ];
+  }
+
 }
