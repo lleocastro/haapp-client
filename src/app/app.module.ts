@@ -8,7 +8,7 @@ import { MyApp } from './app.component';
 import { ChatPage } from '../pages/chat/chat';
 import { BubblePage } from '../pages/chat/bubble/bubble';
 import { PeoplesPage } from '../pages/peoples/peoples';
-import { DiscoverPage } from '../pages/discover/discover';
+import { SecretsPage } from '../pages/secrets/secrets';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { UserProvider } from '../providers/auth/user';
@@ -35,7 +35,7 @@ import { Vibration } from '@ionic-native/vibration';
     BubblePage,
     ProfilePage,
     PeoplesPage,
-    DiscoverPage,
+    SecretsPage,
     TabsPage,
     ConfigsPage
   ],
@@ -51,7 +51,7 @@ import { Vibration } from '@ionic-native/vibration';
     BubblePage,
     ProfilePage,
     PeoplesPage,
-    DiscoverPage,
+    SecretsPage,
     TabsPage,
     ConfigsPage
   ],

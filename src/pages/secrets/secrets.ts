@@ -6,10 +6,10 @@ import { UserProvider } from '../../providers/auth/user';
 import { ConfigsPage } from '../configs/configs';
 
 @Component({
-  selector: 'page-discover',
-  templateUrl: 'discover.html'
+  selector: 'page-secrets',
+  templateUrl: 'secrets.html'
 })
-export class DiscoverPage {
+export class SecretsPage {
 
   currentUser: any;
   relationship: any;
