@@ -345,7 +345,7 @@ export class Mocks {
       },
       {
         user_id: 2,
-        text: 'Queria foder com zumbis ;)',
+        text: 'Queria foder todos os zumbis ;)',
         image_url: null,
         explicit_image: false,
         created_at: new Date()
