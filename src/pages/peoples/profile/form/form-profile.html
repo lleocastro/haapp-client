@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-navbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-11><ion-title>Perfil</ion-title></ion-col>
+          <ion-col col-1 (tap)="dismiss()">
+            <ion-icon name="ios-close-outline" class="fsize-2 blank bold"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content class="form_profile__container">
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col class="default-photo" col-8>
+
+        <img [src]="formData.photos[0].url" class="wh-100" *ngIf="formData.photos[0] && formData.photos[0].url.length"/>
+
+        <div class="wh-100 vcenter no-photo-selected" *ngIf="!formData.photos[0] || (formData.photos[0].url && !formData.photos[0].url.length)">
+          <ion-icon class="fsize-2dot3" name="ios-camera-outline"></ion-icon>
+        </div>
+
+      </ion-col>
+      <ion-col class="p-0" col-4>
+        <ion-grid>
+          <ion-row class="mini-photo">
+
+            <img [src]="formData.photos[1].url" class="wh-100" *ngIf="formData.photos[1] && formData.photos[1].url.length"/>
+
+            <div class="wh-100 vcenter no-photo-selected" *ngIf="!formData.photos[1] || (formData.photos[1].url && !formData.photos[1].url.length)">
+              <ion-icon class="fsize-2dot3" name="ios-camera-outline"></ion-icon>
+            </div>
+
+          </ion-row>
+          <ion-row class="p-5"></ion-row>
+          <ion-row class="mini-photo">
+
+            <img [src]="formData.photos[2].url" class="wh-100" *ngIf="formData.photos[2] && formData.photos[2].url.length"/>
+
+            <div class="wh-100 vcenter no-photo-selected" *ngIf="!formData.photos[2] || (formData.photos[2].url && !formData.photos[2].url.length)">
+              <ion-icon class="fsize-2dot3" name="ios-camera-outline"></ion-icon>
+            </div>
+
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+
+    <ion-row><br></ion-row>
+
+    <ion-row>
+      <ion-list class="w-100">
+        <ion-item>
+          <ion-label class="dark-gray fsize-dot7" stacked>Nome Completo</ion-label>
+          <ion-input type="text" class="forms" [(ngModel)]="formData.name" placeholder="Exemplo: Leonardo B. Castro"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="dark-gray fsize-dot7" stacked>Identificação</ion-label>
+          <ion-input type="text" class="forms" [(ngModel)]="formData.username" placeholder="Exemplo: blabla, joao, coura"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="dark-gray fsize-dot7" stacked>Ocupação</ion-label>
+          <ion-input type="text" class="forms" [(ngModel)]="formData.job_or_school" placeholder="Exemplo: Médico, Atendente, Estudante, etc..."></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="dark-gray fsize-dot7" stacked>Cidade Atual</ion-label>
+          <ion-input type="text" class="forms" [(ngModel)]="formData.region" placeholder="Exemplo: São José dos Campos"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="dark-gray fsize-dot7" stacked>Minibio</ion-label>
+          <ion-textarea class="forms" [(ngModel)]="formData.minibio" placeholder="Uma breve descrição sobre você..."></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label class="dark-gray fsize-dot7" stacked>Interesses</ion-label>
+          <ion-select multiple="true" class="forms" [(ngModel)]="formData.tags" placeholder="Seus principais interesses">
+            <ion-option *ngFor="let tag of tags" [value]="tag">{{ tag }}</ion-option>
+            </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <br>
+        <button ion-button class="btn-primary" full round (tap)="save()">Salvar</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

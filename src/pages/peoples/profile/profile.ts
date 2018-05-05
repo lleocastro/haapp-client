@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
 import * as _ from 'lodash';
 import * as moment from 'moment';
 
@@ -7,6 +7,7 @@ import { UserProvider } from '../../../providers/auth/user';
 
 import { BubblePage } from '../../chat/bubble/bubble';
 import { ChatProvider } from '../../../providers/chat/chat';
+import { FormProfilePage } from './form/form-profile';
 
 @Component({
   selector: 'page-profile',
@@ -22,6 +23,7 @@ export class ProfilePage {
   constructor(
     private navCtrl: NavController,
     private navParams: NavParams,
+    private modalCtrl: ModalController,
     private userProvider: UserProvider,
     private chatProvider: ChatProvider,
     private alertCtrl: AlertController
@@ -93,7 +95,8 @@ export class ProfilePage {
   }
 
   editAuthUserProfile() {
-    console.log('editAuthUserProfile');
+    let modal = this.modalCtrl.create(FormProfilePage, {form_data: this.currentUser});
+    modal.present();
   }
 
   reportProfilePrompt() {

@@ -1,0 +1,23 @@
+.form_profile__container {
+
+  .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+    color: $color__black_gray !important;
+  }
+
+  textarea.text-input.text-input-md {
+    height: 93px !important;
+  }
+
+  .default-photo {
+    height: 200px;
+  }
+
+  .mini-photo {
+    height: 90px;
+  }
+
+  .no-photo-selected {
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+}
