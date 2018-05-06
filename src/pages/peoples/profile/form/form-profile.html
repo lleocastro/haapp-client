@@ -18,7 +18,8 @@
     <ion-row>
       <ion-col class="default-photo" col-8>
 
-        <img [src]="formData.photos[0].url" class="wh-100" *ngIf="formData.photos[0] && formData.photos[0].url.length"/>
+        <img [src]="formData.photos[0].url" class="wh-100 object-cover" *ngIf="formData.photos[0] && formData.photos[0].url.length"/>
+
         <span class="remove-img absolute fsize-1 radius-100 blank" *ngIf="formData.photos[0] && formData.photos[0].url.length"
                                                                   (tap)="removeImg(formData.photos[0])">x</span>
 
@@ -31,7 +32,8 @@
         <ion-grid>
           <ion-row class="mini-photo">
 
-            <img [src]="formData.photos[1].url" class="wh-100" *ngIf="formData.photos[1] && formData.photos[1].url.length"/>
+            <img [src]="formData.photos[1].url" class="wh-100 object-cover" *ngIf="formData.photos[1] && formData.photos[1].url.length"/>
+
             <span class="remove-img absolute fsize-1 radius-100 blank" *ngIf="formData.photos[1] && formData.photos[1].url.length"
                                                                       (tap)="removeImg(formData.photos[1])">x</span>
 
@@ -43,7 +45,8 @@
           <ion-row class="p-5"></ion-row>
           <ion-row class="mini-photo">
 
-            <img [src]="formData.photos[2].url" class="wh-100" *ngIf="formData.photos[2] && formData.photos[2].url.length"/>
+            <img [src]="formData.photos[2].url" class="wh-100 object-cover" *ngIf="formData.photos[2] && formData.photos[2].url.length"/>
+
             <span class="remove-img absolute fsize-1 radius-100 blank" *ngIf="formData.photos[2] && formData.photos[2].url.length"
                                                                       (tap)="removeImg(formData.photos[2])">x</span>
 
