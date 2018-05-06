@@ -22,7 +22,18 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
-
+$color__primary: rgb(0, 128, 128);
+$color__message_checked: #5AB248;
+$color__favority_chat: #FFE426;
+$color__message_liked: #E33F3D;
+$color__turquoise: rgb(64, 224, 208);
+$color__light_gray: #ccc;
+$color__black_gray: #333;
+$color__blank: #fff;
+$color__gray: #666;
+$color__black: #000;
+$color__slategray: rgb(112, 128, 144);
+$color__dark_gray: rgb(169, 169, 169);
 
 
 // Named Color Variables
@@ -71,6 +82,9 @@ $colors: (
 // default are overridden.
 
 @import "ionic.theme.default";
+
+@import "./ionic-custom";
+@import "./components";
 
 
 // Ionicons

@@ -15,21 +15,6 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-/**
- * Default Colors
- */
-$color__primary: rgb(0, 128, 128);
-$color__message_checked: #5AB248;
-$color__favority_chat: #FFE426;
-$color__message_liked: #E33F3D;
-$color__turquoise: rgb(64, 224, 208);
-$color__light_gray: #ccc;
-$color__black_gray: #333;
-$color__blank: #fff;
-$color__gray: #666;
-$color__black: #000;
-$color__slategray: rgb(112, 128, 144);
-$color__dark_gray: rgb(169, 169, 169);
 
 /** Colors to dynamic conditionals */
 .blank { color: $color__blank !important; }
@@ -119,6 +104,9 @@ $color__dark_gray: rgb(169, 169, 169);
 .h-100 { height: 100% !important; }
 .wh-100 { width: 100% !important; height: 100% !important; }
 
+/** Filters */
+.blur-7 { filter: blur(7px) !important; }
+
 /** Helpers */
 .object-cover { object-fit: cover !important; }
 .inline { display: inline-block !important; }
@@ -132,65 +120,3 @@ $color__dark_gray: rgb(169, 169, 169);
 .decoration-none { text-decoration: none !important; }
 .hidden { overflow: hidden !important; }
 // .pre-line { white-space: pre-line !important; }
-
-/** Filters */
-.blur-7 { filter: blur(7px) !important; }
-
-/*****************************************
- *       Ionic Custom Components
- *****************************************
- */
-
- /** Header */
- .header.header-md {
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, .5) !important;
-}
-.header-user-profile {
-  width: 29px !important;
-  height: 28px;
-}
-
-.toolbar-background-md {
-  background: $color__primary !important;
-}
-.toolbar-title.toolbar-title-md {
-  color: $color__blank !important;
-  font-weight: normal !important;
-}
-.back-button {
-  color: $color__blank !important;
-}
-
-.card.card-md {
-  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1),
-              0 1px 1px -2px rgba(0, 0, 0, 0.2),
-              0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
-}
-
-.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
-.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
-  border-bottom: 1px solid $color__light_gray !important;
-  box-shadow: none !important;
-}
-.item-md {
-  padding-left: 0 !important;
-}
-
-.text-input-md {
-  font-size: .9em !important;
-}
-
-/**  */
-
-.light-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-}
-
-hr.separator {
-  border: 0 solid #ccc;
-}
