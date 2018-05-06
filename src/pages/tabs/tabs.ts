@@ -31,10 +31,10 @@ export class TabsPage {
         this.chatIcon = 'ios-chatbubbles';
         break;
       case 2:
-        this.peopleIcon = 'md-people';
+        this.peopleIcon = 'ios-people';
         break;
       case 3:
-        this.secretsIcon = 'md-flame';
+        this.secretsIcon = 'ios-flame';
         break;
     }
   }
