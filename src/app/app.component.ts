@@ -6,13 +6,14 @@ import { Vibration } from '@ionic-native/vibration';
 import { Network } from '@ionic-native/network';
 import * as _ from 'lodash';
 
+import { FormAuthPage } from '../pages/auth/form/form-auth';
 import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage: any;
 
   constructor(
     platform: Platform,
@@ -20,6 +21,8 @@ export class MyApp {
     splashScreen: SplashScreen,
     private network: Network
   ) {
+
+    this.checkIfAuthenticated();
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -52,6 +55,18 @@ export class MyApp {
     // stop connect watch
     // connectSubscription.unsubscribe();
 
+  }
+
+  /**
+   *
+   * @returns void
+   */
+  protected checkIfAuthenticated() {
+    if (true) {
+      this.rootPage = TabsPage;
+    } else {
+      //this.rootPage = FormAuthPage;
+    }
   }
 
 }

@@ -1,0 +1,106 @@
+<ion-content class="form_auth__container bg-primary" padding>
+
+
+  <div class="login-box w-100 radius-5 vcenter bg-blank" *ngIf="step == 1">
+    <ion-grid>
+
+      <ion-row class="login-title tcenter block">
+        <h3 class="fsize-2dot3 fweight-100 primary uppercase">Haapp</h3>
+        <p class="light-gray">Escolha como deseja fazer o login</p>
+        <br>
+      </ion-row>
+
+      <ion-row>
+        <button ion-button class="btn-primary" full round (tap)="login()">Login Comum</button>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-5><hr class="separator"/></ion-col>
+        <ion-col class="tcenter" col-2>ou</ion-col>
+        <ion-col col-5><hr class="separator"/></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <button ion-button class="btn-primary" full round (tap)="loginWithFB()">Login com Facebook</button>
+      </ion-row>
+
+      <ion-row class="footer-infos">
+        <br><br>
+        <p class="link fsize-dot8 underline" (tap)="setStep(3)">Sou novo aqui, ainda não tenho conta!</p>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+
+  <div class="register-box w-100 radius-5 vcenter bg-blank" *ngIf="step == 2">
+      <ion-grid>
+
+        <ion-row>
+          &nbsp;&nbsp;<ion-icon name="ios-arrow-round-back-outline" class="fsize-2dot3 gray" (tap)="setStep(1)"></ion-icon>
+        </ion-row>
+
+        <ion-row class="login-title tcenter block">
+          <h3>Login Comum</h3>
+        </ion-row>
+
+        <ion-row><br></ion-row>
+
+        <ion-row>
+          <ion-input type="text" class="forms border-all" [(ngModel)]="loginData.username" placeholder="@exemple"></ion-input>
+        </ion-row>
+
+        <ion-row><br></ion-row>
+
+        <ion-row>
+          <ion-input type="password" class="forms border-all" [(ngModel)]="loginData.password" placeholder="**************"></ion-input>
+        </ion-row>
+
+        <ion-row><br></ion-row>
+
+        <ion-row>
+          <button ion-button class="btn-primary" full round (tap)="loginWithRaw()">Entrar</button>
+        </ion-row>
+
+        <ion-row class="footer-infos">
+          <br><br>
+          <p class="fsize-dot8 gray">*Entre com seu usuário e senha.</p>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+
+
+  <div class="register-box w-100 radius-5 vcenter bg-blank" *ngIf="step == 3">
+    <ion-grid>
+
+      <ion-row>
+        &nbsp;&nbsp;<ion-icon name="ios-arrow-round-back-outline" class="fsize-2dot3 gray" (tap)="setStep(1)"></ion-icon>
+      </ion-row>
+
+      <ion-row class="login-title tcenter block">
+        <p>Insira o código do seu convite aqui</p>
+      </ion-row>
+
+      <ion-row><br></ion-row>
+
+      <ion-row>
+        <ion-input type="text" class="forms border-all" [(ngModel)]="accountData.inviteCode" placeholder="Exemplo: A3HBEibe88"></ion-input>
+      </ion-row>
+
+      <ion-row><br></ion-row>
+
+      <ion-row>
+        <button ion-button class="btn-primary" full round (tap)="newAccount()">Vamos lá!</button>
+      </ion-row>
+
+      <ion-row class="footer-infos">
+        <br><br>
+        <p class="fsize-dot8 gray">*O código está no email que enviamos para você.</p>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+  <span class="present absolute fsize-dot8 light-gray blank">Haapp, inc - {{ currentYear }}</span>
+</ion-content>

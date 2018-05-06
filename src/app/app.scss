@@ -17,6 +17,7 @@
 
 
 /** Colors to dynamic conditionals */
+.primary { color: $color__primary !important; }
 .blank { color: $color__blank !important; }
 .black { color: $color__black !important; }
 .gray { color: $color__gray !important; }
@@ -55,6 +56,8 @@
 .tright { text-align: right !important; }
 .nowrap { white-space: nowrap !important; }
 .bold { font-weight: bold !important; }
+.uppercase { text-transform: uppercase !important; }
+.underline { text-decoration: underline !important; }
 
 /** Margins */
 .m-0 { margin: 0 !important; }
@@ -119,4 +122,5 @@
 .base-middle { vertical-align: -webkit-baseline-middle !important; }
 .decoration-none { text-decoration: none !important; }
 .hidden { overflow: hidden !important; }
+.border-all { border: 1px solid #ccc !important; }
 // .pre-line { white-space: pre-line !important; }

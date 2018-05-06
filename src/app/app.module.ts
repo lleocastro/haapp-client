@@ -11,6 +11,7 @@ import { PeoplesPage } from '../pages/peoples/peoples';
 import { FormProfilePage } from '../pages/peoples/profile/form/form-profile';
 import { SecretsPage } from '../pages/secrets/secrets';
 
+import { FormAuthPage } from '../pages/auth/form/form-auth';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { UserProvider } from '../providers/auth/user';
@@ -35,6 +36,7 @@ import { Vibration } from '@ionic-native/vibration';
 @NgModule({
   declarations: [
     MyApp,
+    FormAuthPage,
     ChatPage,
     BubblePage,
     ProfilePage,
@@ -53,6 +55,7 @@ import { Vibration } from '@ionic-native/vibration';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    FormAuthPage,
     ChatPage,
     BubblePage,
     ProfilePage,
