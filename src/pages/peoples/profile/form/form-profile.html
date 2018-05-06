@@ -75,6 +75,18 @@
           <ion-label class="dark-gray fsize-dot7" stacked>Email</ion-label>
           <ion-input type="email" class="forms" [(ngModel)]="formData.email" placeholder="Exemplo: leonardo@exemplo.com"></ion-input>
         </ion-item>
+
+        <ion-item>
+          <ion-label class="dark-gray fsize-dot7" stacked>{{ (formData?.invite_code) ? 'Senha' : 'Senha Antiga' }}</ion-label>
+          <ion-input type="password" class="forms" [(ngModel)]="formData.password" placeholder="*****************" *ngIf="!formData?.invite_code"></ion-input>
+          <ion-input type="password" class="forms" [(ngModel)]="formData.oldPassword" placeholder="*****************" *ngIf="formData?.invite_code"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="dark-gray fsize-dot7" stacked>{{ (formData?.invite_code) ? 'Confirmação de senha' : 'Nova Senha' }}</ion-label>
+          <ion-input type="password" class="forms" [(ngModel)]="formData.confirmPassword" placeholder="*****************" *ngIf="!formData?.invite_code"></ion-input>
+          <ion-input type="password" class="forms" [(ngModel)]="formData.newPassword" placeholder="*****************" *ngIf="formData?.invite_code"></ion-input>
+        </ion-item>
+
         <ion-item>
           <ion-label class="dark-gray fsize-dot7" stacked>Ocupação</ion-label>
           <ion-input type="text" class="forms" [(ngModel)]="formData.job_or_school" placeholder="Exemplo: Médico, Atendente, Estudante, etc..."></ion-input>

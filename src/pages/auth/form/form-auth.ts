@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { ModalController } from 'ionic-angular';
 import * as moment from 'moment';
+
+import { FormProfilePage } from '../../peoples/profile/form/form-profile';
 
 @Component({
   selector: 'page-form-auth',
@@ -12,7 +15,7 @@ export class FormAuthPage {
   loginData: any;
   accountData: any;
 
-  constructor() {
+  constructor(private modalCtrl: ModalController) {
     this.loginData = {};
     this.accountData = {};
     this.setStep(1);
@@ -35,7 +38,12 @@ export class FormAuthPage {
   }
 
   newAccount() {
-    console.log('newAccount ', this.accountData);
+    let modal = this.modalCtrl.create(FormProfilePage, {form_data: {
+      invite_code: this.accountData.inviteCode,
+      photos: []
+    }});
+
+    modal.present();
   }
 
 }
