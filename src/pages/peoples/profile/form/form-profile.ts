@@ -33,6 +33,14 @@ export class FormProfilePage {
     console.log('ionViewWillEnter');
   }
 
+  removeImg(img) {
+    _.remove(this.formData.photos, (photo: any) => {
+      return img.url === photo.url;
+    });
+
+    console.log(this.formData);
+  }
+
   save() {
     console.log(this.formData);
   }

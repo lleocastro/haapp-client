@@ -19,6 +19,8 @@
       <ion-col class="default-photo" col-8>
 
         <img [src]="formData.photos[0].url" class="wh-100" *ngIf="formData.photos[0] && formData.photos[0].url.length"/>
+        <span class="remove-img absolute fsize-1 radius-100 blank" *ngIf="formData.photos[0] && formData.photos[0].url.length"
+                                                                  (tap)="removeImg(formData.photos[0])">x</span>
 
         <div class="wh-100 vcenter no-photo-selected" *ngIf="!formData.photos[0] || (formData.photos[0].url && !formData.photos[0].url.length)">
           <ion-icon class="fsize-2dot3" name="ios-camera-outline"></ion-icon>
@@ -30,6 +32,8 @@
           <ion-row class="mini-photo">
 
             <img [src]="formData.photos[1].url" class="wh-100" *ngIf="formData.photos[1] && formData.photos[1].url.length"/>
+            <span class="remove-img absolute fsize-1 radius-100 blank" *ngIf="formData.photos[1] && formData.photos[1].url.length"
+                                                                      (tap)="removeImg(formData.photos[1])">x</span>
 
             <div class="wh-100 vcenter no-photo-selected" *ngIf="!formData.photos[1] || (formData.photos[1].url && !formData.photos[1].url.length)">
               <ion-icon class="fsize-2dot3" name="ios-camera-outline"></ion-icon>
@@ -40,6 +44,8 @@
           <ion-row class="mini-photo">
 
             <img [src]="formData.photos[2].url" class="wh-100" *ngIf="formData.photos[2] && formData.photos[2].url.length"/>
+            <span class="remove-img absolute fsize-1 radius-100 blank" *ngIf="formData.photos[2] && formData.photos[2].url.length"
+                                                                      (tap)="removeImg(formData.photos[2])">x</span>
 
             <div class="wh-100 vcenter no-photo-selected" *ngIf="!formData.photos[2] || (formData.photos[2].url && !formData.photos[2].url.length)">
               <ion-icon class="fsize-2dot3" name="ios-camera-outline"></ion-icon>
