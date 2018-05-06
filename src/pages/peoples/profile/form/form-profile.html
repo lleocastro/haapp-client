@@ -23,7 +23,7 @@
                                                                   (tap)="removeImg(formData.photos[0])">x</span>
 
         <div class="wh-100 vcenter no-photo-selected" *ngIf="!formData.photos[0] || (formData.photos[0].url && !formData.photos[0].url.length)">
-          <ion-icon class="fsize-2dot3" name="ios-camera-outline"></ion-icon>
+          <ion-icon class="fsize-2dot3 gray" name="ios-camera-outline"></ion-icon>
         </div>
 
       </ion-col>
@@ -36,7 +36,7 @@
                                                                       (tap)="removeImg(formData.photos[1])">x</span>
 
             <div class="wh-100 vcenter no-photo-selected" *ngIf="!formData.photos[1] || (formData.photos[1].url && !formData.photos[1].url.length)">
-              <ion-icon class="fsize-2dot3" name="ios-camera-outline"></ion-icon>
+              <ion-icon class="fsize-2dot3 gray" name="ios-camera-outline"></ion-icon>
             </div>
 
           </ion-row>
@@ -48,7 +48,7 @@
                                                                       (tap)="removeImg(formData.photos[2])">x</span>
 
             <div class="wh-100 vcenter no-photo-selected" *ngIf="!formData.photos[2] || (formData.photos[2].url && !formData.photos[2].url.length)">
-              <ion-icon class="fsize-2dot3" name="ios-camera-outline"></ion-icon>
+              <ion-icon class="fsize-2dot3 gray" name="ios-camera-outline"></ion-icon>
             </div>
 
           </ion-row>
