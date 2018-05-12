@@ -1,9 +1,16 @@
 {
   "name": "haapp-client",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Leonardo B. Castro",
-  "description": "Simple web chat",
+  "description": "A simple chat app open source",
+  "keywords": ["chat", "app", "mobile", "ionic3", "javascript", "nodejs", "design"],
+  "homepage": "https://github.com/lleocastro/haapp-client",
+  "bugs": {
+    "url" : "https://github.com/lleocastro/haapp-client/issues",
+    "email" : "leonardo_carvalho@outlook.com"
+  },
   "private": true,
+  "license": "GNU General Public License v3.0",
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
