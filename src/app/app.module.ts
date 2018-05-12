@@ -21,6 +21,7 @@ import { SecretsProvider } from '../providers/secrets/secrets';
 import { ConfigsPage } from '../pages/configs/configs';
 import { ProfilePage } from '../pages/peoples/profile/profile';
 import { QuotePage } from '../pages/secrets/quote/quote';
+import { CommentsPage } from '../pages/secrets/comments/comments';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -45,6 +46,7 @@ import { Vibration } from '@ionic-native/vibration';
     TabsPage,
     FormProfilePage,
     QuotePage,
+    CommentsPage,
     ConfigsPage
   ],
   imports: [
@@ -64,6 +66,7 @@ import { Vibration } from '@ionic-native/vibration';
     TabsPage,
     FormProfilePage,
     QuotePage,
+    CommentsPage,
     ConfigsPage
   ],
   providers: [

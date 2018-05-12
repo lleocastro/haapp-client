@@ -341,13 +341,31 @@ export class Mocks {
         text: 'QUERO MATAR TODO MUNDOOOOOOOOOOO! UAHAHAHAHAH..',
         image_url: null,
         explicit_image: false,
+        likes: [{user_id: 2}, {user_id: 3}],
+        comments: [
+          {
+            user_id: 2,
+            comment: 'oi <3',
+            likes: [{user_id: 0}],
+            created_at: new Date()
+          }
+        ],
         created_at: new Date()
       },
       {
         user_id: 2,
-        text: 'Queria foder todos os zumbis ;)',
+        text: 'Queria acabar com todos os zumbis ;)',
         image_url: null,
         explicit_image: false,
+        likes: [{user_id: 2}, {user_id: 3}, {user_id: 0}, {user_id: 5}],
+        comments: [
+          {
+            user_id: 0,
+            comment: 'lorem ipsum haha...',
+            likes: [{user_id: 0}],
+            created_at: new Date()
+          }
+        ],
         created_at: new Date()
       },
       {
@@ -355,6 +373,8 @@ export class Mocks {
         text: null,
         image_url: 'https://picsum.photos/300/200',
         explicit_image: false,
+        likes: [],
+        comments: [],
         created_at: new Date()
       },
       {
@@ -362,6 +382,8 @@ export class Mocks {
         text: '???',
         image_url: 'https://picsum.photos/300/200',
         explicit_image: true,
+        likes: [],
+        comments: [],
         created_at: new Date()
       },
       {
@@ -369,6 +391,8 @@ export class Mocks {
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, atque eos omnis illo voluptas officia rem in quas! Sint doloribus ex minima sequi modi quis officiis dolorem praesentium culpa exercitationem!',
         image_url: null,
         explicit_image: false,
+        likes: [],
+        comments: [],
         created_at: new Date()
       }
     ];
