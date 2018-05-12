@@ -41,3 +41,15 @@
 .text-input-md {
   font-size: .9em !important;
 }
+
+ /** Footer */
+.footer.footer-md.bubble-footer .toolbar-background-md {
+  background-color: transparent !important;
+}
+.footer.footer-md.bubble-footer .send-message {
+  color: $color__primary;
+}
+.footer.footer-md.bubble-footer .bubble-textbox .text-input.text-input-md {
+  margin: 0;
+  height: 100%;
+}

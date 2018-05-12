@@ -70,9 +70,9 @@
             &nbsp;&nbsp;&nbsp;<ion-icon name="ios-happy-outline" class="fsize-1dot8" (tap)="showEmojis($event)"></ion-icon>
           </ion-col>
           <ion-col class="vcenter" col-9>
-            <ion-textarea class="bubble-textbox hidden" [(ngModel)]="chatMessage.text" (keyup)="isTyping($event)"
-                                                        [ngStyle]="{'height.px': chatBoxSpandable?.height}"
-                                                        placeholder="Diga algo..."></ion-textarea>
+            <ion-textarea class="bubble-textbox vcenter hidden" [(ngModel)]="chatMessage.text" (keyup)="isTyping($event)"
+                                                                [ngStyle]="{'height.px': chatBoxSpandable?.height}"
+                                                                placeholder="Diga algo..."></ion-textarea>
           </ion-col>
           <ion-col class="vcenter" col-1 (tap)="send($event)">
             <ion-icon name="md-send" class="send-message fsize-1dot8"></ion-icon>
