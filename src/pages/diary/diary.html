@@ -16,7 +16,7 @@
             </ion-avatar>
           </ion-col>
           <ion-col class="tcenter" col-8>
-            <ion-title class="mtop-1">Feed</ion-title>
+            <ion-title class="mtop-1">Diário</ion-title>
           </ion-col>
           <ion-col class="tright" col-2>
             <ion-icon name="ios-settings-outline" class="fsize-1dot5 base-middle fsize-1dot6 base-middle blank" (tap)="goToConfigs()"></ion-icon>
@@ -26,10 +26,10 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="secrets__container bg-f8">
+<ion-content class="diary__container bg-f8">
   <ion-grid class="p-0">
     <ion-row>
-      <ion-card class="radius-5 p-3 card-shadow" *ngFor="let secret of secrets">
+      <ion-card class="radius-5 p-3 card-shadow" *ngFor="let diaryPage of diaryPages">
 
         <ion-card-header class="card-header">
           <ion-grid class="p-0">
@@ -40,9 +40,9 @@
                   &nbsp;&nbsp;@anônimo
                 </span>
               </ion-col>
-              <ion-col class="p-0 tright" col-2 (tap)="openSecretOptions($event, secret)">
-                <ion-icon name="ios-more-outline" [hidden]="secret?.openedOptions"></ion-icon>
-                <ion-icon name="md-checkmark-circle" class="slategray" [hidden]="!secret?.openedOptions"></ion-icon>
+              <ion-col class="p-0 tright" col-2 (tap)="openDiaryOptions($event, diaryPage)">
+                <ion-icon name="ios-more-outline" [hidden]="diaryPage?.openedOptions"></ion-icon>
+                <ion-icon name="md-checkmark-circle" class="slategray" [hidden]="!diaryPage?.openedOptions"></ion-icon>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -51,51 +51,51 @@
         <ion-card-content class="p-0 pbottom-3">
           <ion-grid>
             <ion-row>
-              <p class="black pre-line" [ngClass]="{'fsize-1dot3': !secret?.image_url && secret?.text.length < 50,
-                                                    'fsize-dot9': secret?.image_url || secret?.text.length > 100}">
-                {{ secret?.text }}
+              <p class="black pre-line" [ngClass]="{'fsize-1dot3': !diaryPage?.image_url && diaryPage?.text.length < 50,
+                                                    'fsize-dot9': diaryPage?.image_url || diaryPage?.text.length > 100}">
+                {{ diaryPage?.text }}
               </p>
             </ion-row>
 
             <ion-row>
-              <span class="before-image-load relative bg-blank mbottom vcenter fsize-dot7" *ngIf="(secret?.image_url && secret?.image_url.length)
-                                                                                                                     && !secret.showImage">
+              <span class="before-image-load relative bg-blank mbottom vcenter fsize-dot7" *ngIf="(diaryPage?.image_url && diaryPage?.image_url.length)
+                                                                                                                     && !diaryPage.showImage">
               <ion-icon name="ios-image-outline" class="fsize-24 blur-7"></ion-icon>
 
-              <span class="img-download absolute tcenter" (tap)="showSecretImage($event, secret)">
-                <span class="block black fsize-1dot3" *ngIf="secret?.explicit_image">
+              <span class="img-download absolute tcenter" (tap)="showImage($event, diaryPage)">
+                <span class="block black fsize-1dot3" *ngIf="diaryPage?.explicit_image">
                   <strong class="bold">Atenção!</strong> Imagem com conteúdo explícito.
                 </span>
 
-                <ion-icon name="ios-cloud-download-outline" class="fsize-2dot3 blank" *ngIf="!secret?.explicit_image"></ion-icon>
-                <ion-icon name="ios-eye-outline" class="fsize-2dot3 black" *ngIf="secret?.explicit_image"></ion-icon>
+                <ion-icon name="ios-cloud-download-outline" class="fsize-2dot3 blank" *ngIf="!diaryPage?.explicit_image"></ion-icon>
+                <ion-icon name="ios-eye-outline" class="fsize-2dot3 black" *ngIf="diaryPage?.explicit_image"></ion-icon>
 
-                &nbsp;&nbsp;<small class="fsize-1dot2 black super" [ngClass]="{'blank': !secret?.explicit_image, 'black': secret?.explicit_image}">
-                  {{ (!secret?.explicit_image) ? 'Carregar' : 'Ver mesmo assim' }}
+                &nbsp;&nbsp;<small class="fsize-1dot2 black super" [ngClass]="{'blank': !diaryPage?.explicit_image, 'black': diaryPage?.explicit_image}">
+                  {{ (!diaryPage?.explicit_image) ? 'Carregar' : 'Ver mesmo assim' }}
                 </small>
 
               </span>
             </span>
 
-            <img [src]="secret?.image_url" *ngIf="(secret?.image_url && secret?.image_url.length)"
-                                            [hidden]="!secret.showImage"/>
+            <img [src]="diaryPage?.image_url" *ngIf="(diaryPage?.image_url && diaryPage?.image_url.length)"
+                                            [hidden]="!diaryPage.showImage"/>
 
             </ion-row>
           </ion-grid>
         </ion-card-content>
 
         <ion-row class="border-top ptop-3">
-          <ion-col class="border-right vcenter" (tap)="likeToggle($event, secret)" col-6>
+          <ion-col class="border-right vcenter" (tap)="likeToggle($event, diaryPage)" col-6>
             <span>
-              <ion-icon name="ios-heart-outline" class="red middle" [hidden]="secret?.liked"></ion-icon>
-              <ion-icon name="ios-heart" class="red middle" [hidden]="!secret?.liked"></ion-icon>
-              &nbsp;&nbsp;{{ secret?.likes_counter || 0 }}
+              <ion-icon name="ios-heart-outline" class="red middle" [hidden]="diaryPage?.liked"></ion-icon>
+              <ion-icon name="ios-heart" class="red middle" [hidden]="!diaryPage?.liked"></ion-icon>
+              &nbsp;&nbsp;{{ diaryPage?.likes_counter || 0 }}
             </span>
           </ion-col>
-          <ion-col class="vcenter" (tap)="showComments($event, secret)" col-6>
+          <ion-col class="vcenter" (tap)="showComments($event, diaryPage)" col-6>
             <span>
               <ion-icon name="ios-text-outline" class="middle"></ion-icon>
-              &nbsp;&nbsp;{{ secret?.comments_counter || 0 }}
+              &nbsp;&nbsp;{{ diaryPage?.comments_counter || 0 }}
             </span>
           </ion-col>
         </ion-row>

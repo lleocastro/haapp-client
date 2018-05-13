@@ -334,7 +334,7 @@ export class Mocks {
     ]
   }
 
-  secretsMock() {
+  diaryPagesMock() {
     return [
       {
         user_id: 0,
@@ -345,7 +345,7 @@ export class Mocks {
         comments: [
           {
             user_id: 2,
-            comment: 'oi <3',
+            text: 'oi <3',
             likes: [{user_id: 0}],
             created_at: new Date()
           }
@@ -361,8 +361,14 @@ export class Mocks {
         comments: [
           {
             user_id: 0,
-            comment: 'lorem ipsum haha...',
+            text: 'lorem ipsum haha...',
             likes: [{user_id: 0}],
+            created_at: new Date()
+          },
+          {
+            user_id: 0,
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sunt labore ad, facilis enim ratione modi molestiae ut itaque? Quia natus maxime ex sed temporibus numquam velit illo perferendis laborum?',
+            likes: [{user_id: 2}, {user_id: 5}],
             created_at: new Date()
           }
         ],

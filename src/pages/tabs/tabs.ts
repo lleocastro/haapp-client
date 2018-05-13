@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { ChatPage } from '../chat/chat';
 import { PeoplesPage } from '../peoples/peoples';
-import { SecretsPage } from '../secrets/secrets';
+import { DiaryPage } from '../diary/diary';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -11,11 +11,11 @@ export class TabsPage {
 
   chat = ChatPage;
   peoples = PeoplesPage;
-  secrets = SecretsPage;
+  diary = DiaryPage;
 
   chatIcon: string;
   peopleIcon: string;
-  secretsIcon: string;
+  diaryIcon: string;
 
   constructor() {
     this.tabSelected(1);
@@ -34,7 +34,7 @@ export class TabsPage {
         this.peopleIcon = 'ios-people';
         break;
       case 3:
-        this.secretsIcon = 'ios-flame';
+        this.diaryIcon = 'ios-flame';
         break;
     }
   }
@@ -42,7 +42,7 @@ export class TabsPage {
   private resetTabIcons(): void {
     this.chatIcon = 'ios-chatbubbles-outline';
     this.peopleIcon = 'ios-people-outline';
-    this.secretsIcon = 'ios-flame-outline';
+    this.diaryIcon = 'ios-flame-outline';
   }
 
 }
